@@ -4,6 +4,10 @@ import {Switch, Route, BrowserRouter } from 'react-router-dom';
 import Login from './components/login';
 import { Provider } from 'react-redux';
 import store from './store';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MerchantLogin from './components/merchantLogin';
+import PatronMain from './components/patronMain';
+import MerchantMain from './components/merchantMain';
 
 function App() {
 
@@ -13,10 +17,10 @@ return(
     <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Login} />
-      {/* <Route exact path="/wall" component={Wall} />
-      <Route exact path="/register" component={Register} />
-      <Route exact path="/error" component={ErrorPage} />
-      <Route exact path="/profile" component={Profile} /> */}
+      <Route exact path="/merchantlogin" component={MerchantLogin} />
+      <Route exact path="/patronmain" component={PatronMain} />
+      <Route exact path="/merchantmain" component={MerchantMain} />
+      {/* <Route exact path="/profile" component={Profile} /> */}
     </Switch>
     </BrowserRouter>
   </div>

@@ -7,10 +7,10 @@ import Button from 'react-bootstrap/Button';
 import Col from "react-bootstrap/Col";
 import '../css/login.css';
 import { connect } from 'react-redux';
-import { logIn } from '../actions/authActions';
+import { merchLogIn } from '../actions/authActions';
 
 
-class Login extends Component{
+class MerchLogin extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -40,7 +40,7 @@ class Login extends Component{
             email: this.state.email,
             password: this.state.password
         }
-        this.props.logIn(login);
+        this.props.merchLogIn(login);
      
     }
 
@@ -51,19 +51,17 @@ class Login extends Component{
  render() {
     return(
         <Container>
-            <p className ="merchantLog" onClick={() => this.merchantLog()}>Merchant Login</p>
             <Col>
             <h1>The Founding</h1>
             <h2 className="subH">Marketplace</h2>
             <p className="about">A place for free trade, with a prioity on products made in USA.</p>
            <Row>
-            <p className="preg">Patron Registration</p> 
             <Col>   
             <p className="mreg">Merchant Registartion</p>
             </Col>  
             </Row>
             <Table className="patronLog">   
-            <>Patron Login</>                 
+            <>Merchant Login</>                 
                 <Row>
                     <Form className="flog" onSubmit={(event)=>this.handleClick(event)}>
                         <Form.Group>
@@ -91,4 +89,4 @@ class Login extends Component{
 
 
 
-export default connect(null, { logIn })(Login);
+export default connect(null, { merchLogIn })(MerchLogin);

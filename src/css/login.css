@@ -1,0 +1,47 @@
+.merchantLog{
+  padding-left: 80%;
+   font-size: smaller;
+   padding-bottom: 0px;
+   cursor: pointer;
+}
+
+h1{
+    padding-top: 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+h2{
+    font-size: small;
+   text-align: center;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.about{
+    font-size: smaller;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.preg{
+    text-align: center;
+    padding-right: 55%;
+    cursor: pointer;
+}
+
+.mreg{
+    text-align: center;
+    padding-left: 55%;
+    cursor: pointer;
+    padding-top: 0px;
+}
+
+.patronLog{
+    text-align: center;
+    justify-content:center;
+}
+
+.flog{
+    align-content: center;
+    padding-left: 37%;
+}
