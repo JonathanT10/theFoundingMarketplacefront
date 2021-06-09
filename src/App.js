@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MerchantLogin from './components/merchantLogin';
 import PatronMain from './components/patronMain';
 import MerchantMain from './components/merchantMain';
+import MerchantReg from './components/merchantReg';
+
 
 function App() {
 
@@ -20,7 +22,7 @@ return(
       <Route exact path="/merchantlogin" component={MerchantLogin} />
       <Route exact path="/patronmain" component={PatronMain} />
       <Route exact path="/merchantmain" component={MerchantMain} />
-      {/* <Route exact path="/profile" component={Profile} /> */}
+      <Route exact path="/merchantreg" component={MerchantReg} />
     </Switch>
     </BrowserRouter>
   </div>

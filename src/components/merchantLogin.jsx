@@ -44,8 +44,8 @@ class MerchLogin extends Component{
      
     }
 
-      merchantLog(){
-        window.location = '/merchantLogin';
+      merchantReg(){
+        window.location = '/merchantreg';
     }
 
  render() {
@@ -57,7 +57,7 @@ class MerchLogin extends Component{
             <p className="about">A place for free trade, with a prioity on products made in USA.</p>
            <Row>
             <Col>   
-            <p className="mreg">Merchant Registartion</p>
+            <p className="mreg" onClick={() => this.merchantReg()}>Merchant Registartion</p>
             </Col>  
             </Row>
             <Table className="patronLog">   
