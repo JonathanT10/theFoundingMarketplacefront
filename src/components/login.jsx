@@ -45,7 +45,15 @@ class Login extends Component{
     }
 
       merchantLog(){
-        window.location = '/merchantLogin';
+        window.location = '/merchantlogin';
+    }
+
+    merchantReg(){
+        window.location = '/merchantreg';
+    }
+
+    patronReg(){
+        window.location = '/patronreg';
     }
 
  render() {
@@ -57,9 +65,9 @@ class Login extends Component{
             <h2 className="subH">Marketplace</h2>
             <p className="about">A place for free trade, with a prioity on products made in USA.</p>
            <Row>
-            <p className="preg">Patron Registration</p> 
+            <p className="preg" onClick={() => this.patronReg()}>Patron Registration</p> 
             <Col>   
-            <p className="mreg">Merchant Registartion</p>
+            <p className="mreg" onClick={() => this.merchantReg()}>Merchant Registartion</p>
             </Col>  
             </Row>
             <Table className="patronLog">   

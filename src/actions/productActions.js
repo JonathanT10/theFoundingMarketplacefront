@@ -5,11 +5,15 @@ import axios from 'axios';
 //thunk middleware allows us to call dispatch function directly so we can make asynchronous requests
 //dispatch is like resolving a promise; dispatch allows for sending of data
 export const fetchProduct = () => dispatch => {
-    axios.get('https://localhost:5000/api/product/')
+    axios.get('http://localhost:5000/api/product/')
         .then(product => dispatch({
             type: FETCH_PRODUCT,
             payload: product.data
-    }));
+    }))
+    .catch(error => {
+        alert("Invalid request")
+        console.log('Error', error);
+    });
 }
 
 export const createProduct = (postProduct) => dispatch => {
