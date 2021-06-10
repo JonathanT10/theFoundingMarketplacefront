@@ -15,6 +15,7 @@ class PatronMain extends Component {
             <div key={product.id}>
                 <p>{product.name}</p>
                 <p>{product.description}</p>
+                <p>{product.addressMade}</p>
                 <p>{product.price}</p>
             </div>
         ));

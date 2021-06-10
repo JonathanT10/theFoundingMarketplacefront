@@ -9,7 +9,8 @@ import MerchantLogin from './components/merchantLogin';
 import PatronMain from './components/patronMain';
 import MerchantMain from './components/merchantMain';
 import MerchantReg from './components/merchantReg';
-import PatronReg from './components/patronReg'
+import PatronReg from './components/patronReg';
+import MerchantProd from './components/merchProduct';
 
 
 function App() {
@@ -25,6 +26,7 @@ return(
       <Route exact path="/merchantmain" component={MerchantMain} />
       <Route exact path="/merchantreg" component={MerchantReg} />
       <Route exact path="/patronreg" component={PatronReg} />
+      <Route exact path="/merchproduct" component={MerchantProd} />
     </Switch>
     </BrowserRouter>
   </div>

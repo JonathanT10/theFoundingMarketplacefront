@@ -17,15 +17,19 @@ export const fetchProduct = () => dispatch => {
 }
 
 export const createProduct = (postProduct) => dispatch => {
-    axios.post('https://localhost:5000/api/product/',{
+    axios.post('http://localhost:5000/api/product/',{
             name: postProduct.name,
             description: postProduct.description,
             addressMade: postProduct.addressMade,
             price: postProduct.price,
-            merchantId: postProduct.merchantId,
+            merchantId: postProduct.merchant_id,
         })
         .then(product => dispatch({
             type: NEW_PRODUCT,
             payload: product.data
-    }));
+    }))
+    .catch(error => {
+        alert("Invalid request")
+        console.log('Error', error);
+    });
 }

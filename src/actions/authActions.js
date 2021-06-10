@@ -13,7 +13,7 @@ export const logIn = (postpAuth) => {
             paload: pAuth.data
         }))
         .then(response => {
-            const  token  = response.data;
+            const  token  = response.paload;
             localStorage.setItem('token', token);
             window.location="/patronmain";
         }).catch(error => {
@@ -33,7 +33,7 @@ export const merchLogIn = (postmAuth) => {
             paload: mAuth.data
         }))
         .then(response => {
-            const  token  = response.data;
+            const  token  = response.paload;
             localStorage.setItem('token', token);
             window.location="/merchantmain";
         }).catch(error => {
