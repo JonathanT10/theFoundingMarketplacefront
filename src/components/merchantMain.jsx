@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { editAbout } from '../actions/editAction';
 import jwtDecode from 'jwt-decode';
+import '../css/merchantMain.css'
 
 class MerchantMain extends Component {
     constructor(props){
@@ -57,11 +58,17 @@ class MerchantMain extends Component {
         window.location = '/merchproduct';
     }
 
+    logOut = () => {
+        localStorage.removeItem('token');
+        window.location = '/';
+    };
+
     render(){
         return(
             <div>
                 <Container>
                     <Table>
+                        <p className="logOut" onClick={() => this.logOut()}>Log Out</p>
                         <Row>
                             <h1>Welcom to main merchant page</h1>
                         </Row>

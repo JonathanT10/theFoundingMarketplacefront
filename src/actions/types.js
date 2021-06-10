@@ -6,4 +6,4 @@ export const NEW_AUTH = 'NEW_AUTH';
 
 export const NEW_REGISTRATION = 'NEW_REGISTRATION';
 
-export const NEW_MERCH = 'EDIT_MERCH';
+export const NEW_MERCH = 'NEW_MERCH';

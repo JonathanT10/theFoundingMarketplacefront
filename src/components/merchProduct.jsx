@@ -8,6 +8,7 @@ import '../css/login.css';
 import { connect } from 'react-redux';
 import { createProduct } from '../actions/productActions';
 import jwtDecode from 'jwt-decode';
+import '../css/merchProduct.css';
 
 
 class MerchantProd extends Component {
@@ -73,8 +74,15 @@ this.setState({
     window.location="/merchantmain";
     }
 
+    logOut = () => {
+        localStorage.removeItem('token');
+        window.location = '/';
+    };
+
     render(){
         return(
+            <div>
+                <p className="logOut" onClick={() => this.logOut()}>Log Out</p>
             <Container fluid>
                 Add Product 
                 <Table> 
@@ -110,6 +118,7 @@ this.setState({
                     </Row>
                 </Table>
             </Container>
+            </div>
         )
 
     }

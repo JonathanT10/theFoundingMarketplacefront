@@ -10,8 +10,5 @@ export const editAbout = (merchant_id, abt) => {
             type: NEW_MERCH,
             paload: abt.data
         }))
-            .catch(error => {
-            alert("Invalid entry, please try again")
-            console.log('Error', error);
-        });
+     
 }
