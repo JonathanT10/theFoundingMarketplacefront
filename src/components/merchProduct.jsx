@@ -11,6 +11,7 @@ import jwtDecode from 'jwt-decode';
 import '../css/merchProduct.css';
 
 
+
 class MerchantProd extends Component {
     constructor(props){
         super(props);
@@ -19,9 +20,10 @@ class MerchantProd extends Component {
             description: '',
             addressMade: '',
             price: '',
-            merchant_id: ''
+            merchant_id: '',
         };
     }
+
 
     nameChange = event => {
         const name = event.target.value;

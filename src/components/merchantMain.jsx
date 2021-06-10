@@ -76,6 +76,9 @@ class MerchantMain extends Component {
                             <Button onClick={() => this.merchProduct()}>Add Product</Button>
                         </Row>
                         <Row>
+                            <Button onClick={() => this.merchProduct()}>Add Product</Button>
+                        </Row>
+                        <Row>
                             <Button onClick={() => this.patronMain()}>View Patron Main Page</Button>
                         </Row>
                         <Row>

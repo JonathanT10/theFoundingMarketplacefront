@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchProduct } from '../actions/productActions'
+import { fetchIdProduct } from '../actions/productActions'
 import '../css/patronMain.css'
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
@@ -9,13 +9,27 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from "react-bootstrap/Col";
+import jwtDecode from 'jwt-decode';
+import { fetchIdMerch } from '../actions/productActions';
 
 
-class PatronMain extends Component {
+class MerchProfile extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            merchant_id: '',
+        };
+    }
 
 
     componentDidMount(){
-        this.props.fetchProduct()
+        const jwt = localStorage.getItem('token');
+        const userObject = jwtDecode(jwt);
+        const merchant_id = userObject._id;
+        this.setState({
+            merchant_id: merchant_id
+        })
+        this.props.fetchIdMerch(merchant_id);
     }
 
     mapProduct(){
@@ -61,4 +75,4 @@ const mapStateToProps = state => ({
     product: state.product.items
 });
 
-export default connect(mapStateToProps, { fetchProduct }) (PatronMain);
+export default connect(mapStateToProps, { fetchIdProduct, fetchIdMerch }) (MerchProfile);

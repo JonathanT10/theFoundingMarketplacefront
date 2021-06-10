@@ -1,0 +1,38 @@
+
+
+The edit about section for merchants is not working correctly.
+
+
+
+
+Have to decide where best to put upload image. I started the code which is here:
+
+                    <Row>
+                    <h4>Uploding Image</h4>
+                    <p>Upload product image here</p>
+                    <input type="file" onChange={(e) => this.uploadImage(e, "multer")}/>
+                    <img src={this.state.image} alt="upload-image"/>
+                    </Row>
+
+
+                    
+    setDefaultImage(uploadType) {
+        (uploadType === "multer"){
+            this.setState({
+                multerImage: DefaultImg
+            });
+        }
+    }
+
+    uploadImage(e, method) {
+        if (method === "multer") {
+            let imageFormObj = new FormData();
+
+            imageFormObj.append("imageName", "multer-image-" + Date.now());
+            imageFormObj.append("imageData", e.target.files[0]);
+            this.setState({
+                multerImage: URL.createObjectURL(e.target.files[0])
+            });
+            this.props.upImage(imageFormObj, product_id)
+        }
+    }
