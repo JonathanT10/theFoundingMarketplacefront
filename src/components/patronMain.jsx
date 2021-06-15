@@ -11,7 +11,9 @@ import Button from 'react-bootstrap/Button';
 import Col from "react-bootstrap/Col";
 import { addCart } from '../actions/userActions';
 import jwtDecode from 'jwt-decode';
-import GoogleMaps from './googleMaps';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
+import '../css/googleMaps.css';
+
 
 
 
@@ -46,7 +48,20 @@ class PatronMain extends Component {
         })
     }
 
-   
+   gmapsProduct() {
+       const mapStyles = {
+           width: "70%",
+           height: "50%",
+       };
+       return (
+           <Map
+           google={this.props.google}
+           zoom={10}
+           style={mapStyles}
+           initialCenter={{ lat: 32.74166491698227, lng: -96.2855366309602 }}
+           />
+       );
+   }
 
   
 
@@ -66,7 +81,6 @@ class PatronMain extends Component {
                 <p className="product">{product.description}</p>
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
-                <p className="product">{product.img}</p>
                 <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
                    
                 <Col>
@@ -92,7 +106,6 @@ class PatronMain extends Component {
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
                 <Container>
                 <h1 className='heading'>Welcome to main product page</h1>
-                <img src='../images/capial.png' />
                 {this.mapProduct()}
                 </Container>
             </div>
@@ -107,4 +120,4 @@ const mapStateToProps = state => ({
     product: state.product.items
 });
 
-export default connect(mapStateToProps, { fetchProduct }) (PatronMain);
+export default  connect(mapStateToProps, { fetchProduct }) (PatronMain);

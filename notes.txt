@@ -42,8 +42,13 @@ Have to decide where best to put upload image. I started the code which is here:
 
 
 Google API key
-    AIzaSyCuxk0FsOc6GSDNMvvGc-8jjrQtgmzd7DI
+    AIzaSyD3zjpaRKDi2kra4MN-pmjOtuD5Lloykts
 
      <script src='https://www.google.com/maps/embed/v1/place
             ?key=AIzaSyCuxk0FsOc6GSDNMvvGc-8jjrQtgmzd7DI
             '><script/>
+
+
+    long and lat for test merchants
+
+    32.74166491698227, -96.2855366309602

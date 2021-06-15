@@ -19,6 +19,8 @@ class MerchProfile extends Component {
         super(props);
         this.state = {
             merchant_id: '',
+            productImg: '',
+            product: {},
         };
     }
 
@@ -30,27 +32,45 @@ class MerchProfile extends Component {
         this.setState({
             merchant_id: merchant_id
         })
+        const productImg = "";
+        this.setState({
+            productImg: "http://localhost:5000/"
+        })
         this.props.fetchIdMerch(merchant_id);
         this.props.fetchIdMerchProd(merchant_id);
     }
 
     mapProduct(){
+        const productImg = "http://localhost:5000/";
         console.log("product items", this.props.product);
+        
         return this.props.product.map(product => (
             <div key={product.id}>
-                <Container>
-                <Table>
-                <img src={product.img} alt=""width="400"></img>
-                <p>{product.name}</p>
-                <p>{product.description}</p>
-                <p>{product.addressMade}</p>
-                <p>{product.price}</p>
-                <Button>Google Maps</Button>
+                <Container className='products'>
+                    <div clas='row'>
+                    <div class='col'>
+                    <img src={productImg+product.img}></img>
+                    </div>
+                    <div class='col'>
+                <Table>  
+                <p className="product">{product.name}</p>
+                <p className="product">{product.description}</p>
+                <p className="product">{product.addressMade}</p>
+                <p className="product">{product.price}</p>
+                <p className="product">{product.img}</p>
+                <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
+                   
+                <Col>
+                <Button value={product} className="button">Add to cart</Button>
+                </Col>
                 </Table>
+                </div>
+                </div>
                 </Container>
             </div>
         ));
     }
+
 
     logOut = () => {
         localStorage.removeItem('token');

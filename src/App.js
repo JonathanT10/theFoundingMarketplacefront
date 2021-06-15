@@ -13,6 +13,7 @@ import PatronReg from './components/patronReg';
 import MerchantProd from './components/merchProduct';
 import MerchProfile from './components/merchProfile';
 import GoogleMaps from './components/googleMaps';
+// import ProductImg from './components/productImg';
 
 
 function App() {
@@ -31,6 +32,7 @@ return(
       <Route exact path="/merchproduct" component={MerchantProd} />
       <Route exact path="/merchprofile" component={MerchProfile} />
       <Route exact path="/googlemaps" component={GoogleMaps} />
+      {/* <Route exact path="/productImg" component={ProductImg} /> */}
     </Switch>
     </BrowserRouter>
   </div>
