@@ -10,7 +10,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from "react-bootstrap/Col";
 import jwtDecode from 'jwt-decode';
-import { fetchIdMerch } from '../actions/productActions';
+import { fetchIdMerch } from '../actions/userActions';
+import { fetchIdMerchProd } from '../actions/productActions';
 
 
 class MerchProfile extends Component {
@@ -30,6 +31,7 @@ class MerchProfile extends Component {
             merchant_id: merchant_id
         })
         this.props.fetchIdMerch(merchant_id);
+        this.props.fetchIdMerchProd(merchant_id);
     }
 
     mapProduct(){
@@ -43,6 +45,7 @@ class MerchProfile extends Component {
                 <p>{product.description}</p>
                 <p>{product.addressMade}</p>
                 <p>{product.price}</p>
+                <Button>Google Maps</Button>
                 </Table>
                 </Container>
             </div>
@@ -60,7 +63,9 @@ class MerchProfile extends Component {
             <div>
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
                 <Container>
-                <h1>Welcome to main product page</h1>
+                <h1>Merchant Profile</h1>
+                {/* <h2>{this.props.merchant.about}</h2>
+                <p>{this.props.merchant.hqAddress}</p> */}
                 {this.mapProduct()}
                 </Container>
             </div>
@@ -75,4 +80,4 @@ const mapStateToProps = state => ({
     product: state.product.items
 });
 
-export default connect(mapStateToProps, { fetchIdProduct, fetchIdMerch }) (MerchProfile);
+export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch }) (MerchProfile);

@@ -5,6 +5,7 @@ import Table from 'react-bootstrap/Table';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
 import { editAbout } from '../actions/editAction';
 import jwtDecode from 'jwt-decode';
 import '../css/merchantMain.css'
@@ -63,17 +64,22 @@ class MerchantMain extends Component {
         window.location = '/';
     };
 
+    merchProfile(){
+        window.location = '/merchprofile';
+    }
+
     render(){
         return(
             <div>
+                <p className="logOut" onClick={() => this.logOut()}>Log Out</p>
                 <Container>
                     <Table>
-                        <p className="logOut" onClick={() => this.logOut()}>Log Out</p>
+                        <Col>
                         <Row>
-                            <h1>Welcom to main merchant page</h1>
+                            <h1>Merchant Tasks</h1>
                         </Row>
                         <Row>
-                            <Button onClick={() => this.merchProduct()}>Add Product</Button>
+                            <Button onClick={() => this.merchProfile()}>Merchant Profile</Button>
                         </Row>
                         <Row>
                             <Button onClick={() => this.merchProduct()}>Add Product</Button>
@@ -81,6 +87,8 @@ class MerchantMain extends Component {
                         <Row>
                             <Button onClick={() => this.patronMain()}>View Patron Main Page</Button>
                         </Row>
+                        </Col>
+                        <Col>
                         <Row>
                             <Form>
                                 <Form.Group>
@@ -97,6 +105,7 @@ class MerchantMain extends Component {
                         <Row>
                             <Button>Submit Request for Highlighted Status</Button>
                         </Row>
+                        </Col>
                     </Table>
                 </Container>
             </div>

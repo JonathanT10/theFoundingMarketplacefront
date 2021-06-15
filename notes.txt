@@ -1,6 +1,9 @@
 
-
+Things to come back to:
 The edit about section for merchants is not working correctly.
+The admin put is not working correctly.
+Getting image to upload and display on front end.
+Google map api
 
 
 
@@ -36,3 +39,11 @@ Have to decide where best to put upload image. I started the code which is here:
             this.props.upImage(imageFormObj, product_id)
         }
     }
+
+
+Google API key
+    AIzaSyCuxk0FsOc6GSDNMvvGc-8jjrQtgmzd7DI
+
+     <script src='https://www.google.com/maps/embed/v1/place
+            ?key=AIzaSyCuxk0FsOc6GSDNMvvGc-8jjrQtgmzd7DI
+            '><script/>

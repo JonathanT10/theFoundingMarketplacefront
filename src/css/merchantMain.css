@@ -4,3 +4,9 @@
      padding-bottom: 0px;
      cursor: pointer;
   }
+
+  .row{
+      padding-top: 8px;
+      padding-bottom: 5px;
+      align-items: center;
+  }

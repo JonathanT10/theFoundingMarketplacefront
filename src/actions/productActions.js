@@ -1,4 +1,4 @@
-import { FETCH_PRODUCT, NEW_PRODUCT, NEW_IMAGE, FETCHID_PRODUCT } from './types';
+import { FETCH_PRODUCT, NEW_PRODUCT, NEW_IMAGE, FETCHID_PRODUCT, MERCHID_PRODUCT} from './types';
 import axios from 'axios';
 
 //each action creator is a function
@@ -26,6 +26,19 @@ export const fetchIdProduct = (product_id) => dispatch => {
         alert("Invalid request")
         console.log('Error', error);
     });
+}
+
+export const fetchIdMerchProd = (merchant_id) => dispatch => {
+    axios.get(`http://localhost:5000/api/product/${merchant_id}/merchant`)
+        .then(product => dispatch({
+            type: MERCHID_PRODUCT,
+            payload: product.data
+    }))
+    .catch(error => {
+        alert("Invalid request")
+        console.log('Error', error);
+    });
+    
 }
 
 export const createProduct = (postProduct) => dispatch => {

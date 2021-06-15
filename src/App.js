@@ -11,6 +11,8 @@ import MerchantMain from './components/merchantMain';
 import MerchantReg from './components/merchantReg';
 import PatronReg from './components/patronReg';
 import MerchantProd from './components/merchProduct';
+import MerchProfile from './components/merchProfile';
+import GoogleMaps from './components/googleMaps';
 
 
 function App() {
@@ -27,6 +29,8 @@ return(
       <Route exact path="/merchantreg" component={MerchantReg} />
       <Route exact path="/patronreg" component={PatronReg} />
       <Route exact path="/merchproduct" component={MerchantProd} />
+      <Route exact path="/merchprofile" component={MerchProfile} />
+      <Route exact path="/googlemaps" component={GoogleMaps} />
     </Switch>
     </BrowserRouter>
   </div>

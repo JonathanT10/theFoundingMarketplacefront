@@ -1,5 +1,5 @@
 import { stat } from 'fs';
-import { FETCH_PRODUCT, NEW_PRODUCT, NEW_IMAGE, FETCHID_PRODUCT } from '../actions/types';
+import { FETCH_PRODUCT, NEW_PRODUCT, NEW_IMAGE, FETCHID_PRODUCT, MERCHID_PRODUCT } from '../actions/types';
 
 const initialState = {
     items: []
@@ -25,6 +25,11 @@ export default function(state = initialState, action){
                     items: [action.payload, ...state.items]
                 }
                 case FETCHID_PRODUCT:
+                return {
+                    ...state,
+                    items: [action.payload, ...state.items]
+                }
+                case MERCHID_PRODUCT:
                 return {
                     ...state,
                     items: [action.payload, ...state.items]

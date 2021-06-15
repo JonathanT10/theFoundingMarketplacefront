@@ -1,6 +1,45 @@
+.main{
+    background-color: #14213D;
+}
+
+.products{
+    background-color: #FCA311;
+    border: #E5E5E5;
+    border-width: 3px;
+    border-style: groove;
+}
+
 .logOut{
     padding-right: 90%;
      font-size: smaller;
      padding-bottom: 0px;
      cursor: pointer;
   }
+
+  .button{
+      align-items: center;
+      margin-top: 10px;
+      background-color: #14213D;
+  }
+
+  .heading{
+      padding-bottom: 20%;
+      background-color: #E5E5E5;
+      border: black;
+      border-style:groove;
+      border-width: 5px;
+  }
+
+  .product{
+    border-bottom-style:ridge;
+    margin-right: 65%;
+    background-color: #FCA311;
+    text-align: center;
+  
+  }
+
+  .flexbox-container {
+    display: flex;
+  }
+
+  
