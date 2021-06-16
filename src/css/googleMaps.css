@@ -26,11 +26,12 @@
     font-size: 1.3em;
   }
 
-  .logOut{
+  .lOut{
     padding-right: 90%;
      font-size: smaller;
      padding-bottom: 0px;
      cursor: pointer;
+     color: #14213D;
   }
 
   

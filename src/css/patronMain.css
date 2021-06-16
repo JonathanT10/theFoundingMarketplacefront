@@ -2,6 +2,9 @@
     background-color: #14213D;
 }
 
+.merchHead{
+    background-color: #E5E5E5 ;
+}
 .products{
     background-color: #FCA311;
     border: #E5E5E5;
@@ -14,6 +17,7 @@
      font-size: smaller;
      padding-bottom: 0px;
      cursor: pointer;
+     color: #E5E5E5;
   }
 
   .button{

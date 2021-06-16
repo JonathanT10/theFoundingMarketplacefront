@@ -15,7 +15,8 @@ class PatronReg extends Component {
         this.state ={
             name: '',
             email: '',
-            password: ''
+            password: '',
+            data: null
         };
     }
 
@@ -40,7 +41,7 @@ class PatronReg extends Component {
        });
    }
 
-    handleClick = event => {
+   handleClick = event => {
     event.preventDefault();
     const reg = {
         name: this.state.name,
@@ -51,6 +52,25 @@ class PatronReg extends Component {
     this.props.patrReg(reg);
     window.location="/patronmain";
     }
+
+//    fetchEmailVerificationApi = event => (async () => {
+//        event.preventDefault();
+//     try{
+//         const response = await fetch( `http://apilayer.net/api/check?access_key=c6325710e8c28c60a3f62888787e73c8&email=${this.email}`)
+//         const json = await response.json()
+//         this.setState({data: json.score})
+//     } catch(e) {
+//         console.error(e)
+//     }
+//     if (this.data >= .5)
+//         alert("This is not a valid email.")
+
+//     else (
+//         this.handleClick()
+//     )
+//    });
+
+   
 
     render(){
         return(

@@ -30,9 +30,9 @@ export const fetchIdProduct = (product_id) => dispatch => {
 
 export const fetchIdMerchProd = (merchant_id) => dispatch => {
     axios.get(`http://localhost:5000/api/product/${merchant_id}/merchant`)
-        .then(product => dispatch({
+        .then(mproduct => dispatch({
             type: MERCHID_PRODUCT,
-            payload: product.data
+            payload: mproduct.data
     }))
     .catch(error => {
         alert("Invalid request")

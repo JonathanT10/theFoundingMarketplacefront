@@ -13,6 +13,7 @@ import { addCart } from '../actions/userActions';
 import jwtDecode from 'jwt-decode';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import '../css/googleMaps.css';
+import Maps from './googleMaps';
 
 
 
@@ -25,45 +26,27 @@ class PatronMain extends Component {
             product: {},
             cart: [],
             patron_id: '',
+            product_id: '',
             productImg: ''
         }
     }
 
-    clickCart(product){
-        const jwt = localStorage.getItem('token');
-        const userObject = jwtDecode(jwt);
-        const patron_id = userObject._id;
-        this.setState({
-            patron_id: patron_id
-        })
-    }
+
  
 
 
     componentDidMount(){
         this.props.fetchProduct()
-        const productImg = "";
-        this.setState({
-            productImg: "http://localhost:5000/"
-        })
     }
 
-   gmapsProduct() {
-       const mapStyles = {
-           width: "70%",
-           height: "50%",
-       };
-       return (
-           <Map
-           google={this.props.google}
-           zoom={10}
-           style={mapStyles}
-           initialCenter={{ lat: 32.74166491698227, lng: -96.2855366309602 }}
-           />
-       );
-   }
+
 
   
+
+// clickCart= event =>{
+//     event.preventDefault();
+//     this.props.addCart(this.patron_id, this.product_id)
+// }
 
     mapProduct(){
         const productImg = "http://localhost:5000/";
@@ -81,10 +64,13 @@ class PatronMain extends Component {
                 <p className="product">{product.description}</p>
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
-                <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
+                <Button className="button" 
+                onClick={() => window.location = '/googlemaps'}>Google Map</Button>
                    
                 <Col>
-                <Button value={product} className="button">Add to cart</Button>
+                <Button value={product.id} className="button" 
+                onClick={() => 
+                    this.handleClick()}>Add to cart</Button>
                 </Col>
                 </Table>
                 </div>
@@ -93,6 +79,18 @@ class PatronMain extends Component {
             </div>
         ));
     }
+
+    handleClick=() => {
+        const jwt = localStorage.getItem('token');
+    const userObject = jwtDecode(jwt);
+    const patron_id = userObject._id;
+    this.setState({
+        patron_id: patron_id
+    })
+        this.props.addCart(this.patron_id, this.product_id)
+    }
+  
+
 
     logOut = () => {
         localStorage.removeItem('token');
@@ -120,4 +118,4 @@ const mapStateToProps = state => ({
     product: state.product.items
 });
 
-export default  connect(mapStateToProps, { fetchProduct }) (PatronMain);
+export default  connect(mapStateToProps, { fetchProduct, addCart }) (PatronMain);

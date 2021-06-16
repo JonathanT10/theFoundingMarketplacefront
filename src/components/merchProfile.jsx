@@ -20,7 +20,8 @@ class MerchProfile extends Component {
         this.state = {
             merchant_id: '',
             productImg: '',
-            product: {},
+            product: [],
+            product_id: ''
         };
     }
 
@@ -32,19 +33,20 @@ class MerchProfile extends Component {
         this.setState({
             merchant_id: merchant_id
         })
-        const productImg = "";
-        this.setState({
-            productImg: "http://localhost:5000/"
-        })
         this.props.fetchIdMerch(merchant_id);
         this.props.fetchIdMerchProd(merchant_id);
+        const product= [];
+        this.setState({
+            product: product.array
+        })
     }
 
     mapProduct(){
         const productImg = "http://localhost:5000/";
-        console.log("product items", this.props.product);
+        console.log("product items", this.props.mproduct);
         
         return this.props.product.map(product => (
+            product.map(product => (
             <div key={product.id}>
                 <Container className='products'>
                     <div clas='row'>
@@ -57,18 +59,18 @@ class MerchProfile extends Component {
                 <p className="product">{product.description}</p>
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
-                <p className="product">{product.img}</p>
                 <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
                    
                 <Col>
-                <Button value={product} className="button">Add to cart</Button>
+                <Button value={product.id} className="button" onClick={() =>
+                 window.location = "/productimg"}>Upload Image</Button>
                 </Col>
                 </Table>
                 </div>
                 </div>
                 </Container>
             </div>
-        ));
+        ))));
     }
 
 
@@ -80,10 +82,10 @@ class MerchProfile extends Component {
 
     render(){
         return(
-            <div>
+            <div className="main">
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
                 <Container>
-                <h1>Merchant Profile</h1>
+                <h1 className="merchHead">Merchant Profile</h1>
                 {/* <h2>{this.props.merchant.about}</h2>
                 <p>{this.props.merchant.hqAddress}</p> */}
                 {this.mapProduct()}

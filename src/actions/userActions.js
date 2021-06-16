@@ -14,9 +14,8 @@ export const fetchIdMerch = (merchant_id) => dispatch => {
     });
 }
 
-export const addCart = (patron_id, product) => dispatch => {
-    axios .put(`http://localhost:5000/api/patron/${patron_id}/cart`,{
-        cart: product
+export const addCart = (patron_id, product_id) => dispatch => {
+    axios .post(`http://localhost:5000/api/patron/${patron_id}/cart/${product_id}`,{
     })
     .then(product => dispatch({
         type: NEW_CART,

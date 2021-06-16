@@ -61,18 +61,18 @@ class MerchLogin extends Component{
             </Col>  
             </Row>
             <Table className="patronLog">   
-            <>Merchant Login</>                 
+            <p className="logText">Merchant Login</p>                 
                 <Row>
                     <Form className="flog" onSubmit={(event)=>this.handleClick(event)}>
                         <Form.Group>
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label className="logText">Email address</Form.Label>
                             <Form.Control type="email" name="email" placeholder="Enter email" value={this.state.email} onChange={this.emailChange}/>
-                            <Form.Text>
+                            <Form.Text className="logText">
                             -----We'll never share your email with anyone else.
                             </Form.Text>
                             </Form.Group>
                             <Form.Group>
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label className="logText">Password</Form.Label>
                             <Form.Control type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.passwordChange}/>
                             </Form.Group>
                         <Button variant="primary" type="submit">

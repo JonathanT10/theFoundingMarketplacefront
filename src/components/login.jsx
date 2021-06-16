@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import '../css/login.css';
 import { connect } from 'react-redux';
 import { logIn } from '../actions/authActions';
+import { useCallback } from 'react';
 
 
 class Login extends Component{
@@ -15,7 +16,7 @@ class Login extends Component{
         super(props);
         this.state = {
             email: '',
-            password:''
+            password:'',
         };
     }
  
@@ -34,6 +35,7 @@ class Login extends Component{
         });
     }
 
+  
       handleClick(event) {
         event.preventDefault();
         const login = {
@@ -58,9 +60,10 @@ class Login extends Component{
 
  render() {
     return(
-        <Container>
+        <div >
+        <Container className="main">
             <p className ="merchantLog" onClick={() => this.merchantLog()}>Merchant Login</p>
-            <Col>
+            <Col className="head">
             <h1>The Founding</h1>
             <h2 className="subH">Marketplace</h2>
             <p className="about">A place for free trade, with a prioity on products made in USA.</p>
@@ -71,18 +74,18 @@ class Login extends Component{
             </Col>  
             </Row>
             <Table className="patronLog">   
-            <>Patron Login</>                 
+             <p className="logText">Patron Login</p>                 
                 <Row>
                     <Form className="flog" onSubmit={(event)=>this.handleClick(event)}>
                         <Form.Group>
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label className="logText">Email address</Form.Label>
                             <Form.Control type="email" name="email" placeholder="Enter email" value={this.state.email} onChange={this.emailChange}/>
-                            <Form.Text>
+                            <Form.Text className="logText">
                             -----We'll never share your email with anyone else.
                             </Form.Text>
                             </Form.Group>
                             <Form.Group>
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label className="logText">Password</Form.Label>
                             <Form.Control type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.passwordChange}/>
                             </Form.Group>
                         <Button variant="primary" type="submit">
@@ -93,6 +96,7 @@ class Login extends Component{
             </Table>
             </Col>
         </Container>
+        </div>
     )
 }
 }
