@@ -79,11 +79,16 @@ class MerchProfile extends Component {
         window.location = '/';
     };
 
+    merchMain = () => {
+        window.location = '/merchantmain';
+    };
+
 
     render(){
         return(
             <div className="main">
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
+                <p className="logOut" onClick={() => this.merchMain()}>Back</p>
                 <Container>
                 <h1 className="merchHead">Merchant Profile</h1>
                 {/* <h2>{this.props.merchant.about}</h2>

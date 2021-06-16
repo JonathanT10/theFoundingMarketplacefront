@@ -1,4 +1,5 @@
-import { FETCH_PRODUCT, NEW_PRODUCT, NEW_IMAGE, FETCHID_PRODUCT, MERCHID_PRODUCT} from './types';
+import { FETCH_PRODUCT, NEW_PRODUCT, NEW_IMAGE, 
+    FETCHID_PRODUCT, MERCHID_PRODUCT, COMM_PROD} from './types';
 import axios from 'axios';
 
 //each action creator is a function
@@ -79,4 +80,20 @@ export const upImage = (imageFormObj, product_id) => {
             this.setDefaultImage("multer");
         });
      
+}
+
+
+export const commentProd = (comm, product_id) => dispatch => {
+    axios .put(`http://localhost:5000/api/product/${product_id}`,{
+        comment: comm.comment
+    })
+    .then(comment => dispatch({
+        type: COMM_PROD,
+        payload: comment.data
+    }))
+    .catch(error => {
+    alert("Invalid request")
+    console.log('Error', error);
+    });
+
 }

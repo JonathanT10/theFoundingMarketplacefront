@@ -80,11 +80,15 @@ this.setState({
         localStorage.removeItem('token');
         window.location = '/';
     };
+    merchMain = () => {
+        window.location = '/merchantmain';
+    };
 
     render(){
         return(
             <div>
                 <p className="logOut" onClick={() => this.logOut()}>Log Out</p>
+                <p className="logOut" onClick={() => this.merchMain()}>Back</p>
             <Container fluid>
                 Add Product 
                 <Table> 

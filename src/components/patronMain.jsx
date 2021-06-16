@@ -14,6 +14,7 @@ import jwtDecode from 'jwt-decode';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import '../css/googleMaps.css';
 import Maps from './googleMaps';
+import { commentProd } from '../actions/productActions';
 
 
 
@@ -27,7 +28,8 @@ class PatronMain extends Component {
             cart: [],
             patron_id: '',
             product_id: '',
-            productImg: ''
+            productImg: '',
+            comment: ''
         }
     }
 
@@ -40,6 +42,12 @@ class PatronMain extends Component {
     }
 
 
+    nameComment = event => {
+        const comment = event.target.value;
+       this.setState({
+           comment: comment
+       });
+   }
 
   
 
@@ -68,28 +76,48 @@ class PatronMain extends Component {
                 onClick={() => window.location = '/googlemaps'}>Google Map</Button>
                    
                 <Col>
-                <Button value={product.id} className="button" 
+                <Button value={product._id} className="button" 
                 onClick={() => 
-                    this.handleClick()}>Add to cart</Button>
+                    this.handleClick(Button.value)}>Add to cart</Button>
+                    <Col className="comments">
+                    <p className="commentHead">Comments:</p>
+                    <p className="comment">{product.comment}</p>
+                    </Col>
                 </Col>
                 </Table>
                 </div>
+                <Form onSubmit={(event)=>this.handleComment(event)}>
+                    <Form.Group controlId="formComments">
+                        <Form.Label className="addComment">Post Comment</Form.Label>
+                        <Form.Control type="comment" placeholder="Comment Here"onChange={this.nameChange}/>
+                        <Form.Text className="loginText">
+                        </Form.Text>
+                    </Form.Group>
+                    <Button value={product._id} variant="primary" type="submit">
+                                Post
+                            </Button> 
+                </Form>
                 </div>
                 </Container>
             </div>
         ));
     }
 
-    handleClick=() => {
+    handleClick=(product_id) => {
         const jwt = localStorage.getItem('token');
     const userObject = jwtDecode(jwt);
     const patron_id = userObject._id;
     this.setState({
         patron_id: patron_id
     })
-        this.props.addCart(this.patron_id, this.product_id)
+        this.props.addCart(this.patron_id, product_id)
     }
   
+    handleComment= event => {
+    event.preventDefualt();
+    this.props.commentProd(this.comment, this.product_id);
+
+    }
 
 
     logOut = () => {

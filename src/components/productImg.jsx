@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Form';
+import { connect } from 'react-redux';
 
 class ProductImg extends Component {
     constructor(props){
@@ -17,11 +18,11 @@ class ProductImg extends Component {
 
      imgChange = (event) => {
         this.setState({
-            selectedFile: event.target.file
-        })
+            selectedFile: event.target.files
+        });
         this.setState({
             isSelected: true
-        })
+        });
 	};
 
      handleSubmission = (event) => {
@@ -80,5 +81,6 @@ class ProductImg extends Component {
     }
 
 }
+
 
 export default (ProductImg);

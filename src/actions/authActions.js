@@ -41,3 +41,23 @@ export const merchLogIn = (postmAuth) => {
             console.log('Error', error);
         });
 }
+
+
+export const adminLogIn = (postaAuth) => {
+    axios.post(`http://localhost:5000/api/auth/admin`, {
+            email: postaAuth.email, 
+            password: postaAuth.password
+        })
+        .then(aAuth => ({
+            type: NEW_AUTH,
+            paload: aAuth.data
+        }))
+        .then(response => {
+            const  token  = response.paload;
+            localStorage.setItem('token', token);
+            window.location="/merchantmain";
+        }).catch(error => {
+            alert("Username or Password invalid, please try again")
+            console.log('Error', error);
+        });
+}
