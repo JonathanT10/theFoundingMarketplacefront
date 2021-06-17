@@ -105,6 +105,7 @@ class PatronMain extends Component {
     const userObject = jwtDecode(jwt);
     const patron_id = userObject._id;
         this.props.addCart(patron_id, event.currentTarget.value)
+        window.location = "/cart";
     }
 
     onCommentChange = event => {

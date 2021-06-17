@@ -6,6 +6,7 @@ import registrationReducer from './registrationReducer';
 import userReducer from './userReducer';
 import patronReducer from './patronReducer';
 import merchantReducer from './merchantReducer';
+import merchProdreducer from './merchProdreducer';
 
 
 export default combineReducers({
@@ -16,4 +17,5 @@ export default combineReducers({
     user: userReducer,
     patron: patronReducer,
     merchant: merchantReducer,
+    merchprod: merchProdreducer,
 });

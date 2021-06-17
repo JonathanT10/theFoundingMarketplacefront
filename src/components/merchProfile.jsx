@@ -45,7 +45,7 @@ class MerchProfile extends Component {
         const productImg = "http://localhost:5000/";
         console.log("product items", this.props.mproduct);
         
-        return this.props.product.map(product => (
+        return this.props.merchprod.map(product => (
             product.map(product => (
             <div key={product.id}>
                 <Container className='products'>
@@ -62,7 +62,7 @@ class MerchProfile extends Component {
                 <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
                    
                 <Col>
-                <Button value={product.id} className="button" onClick={() =>
+                <Button value={product.id} className="button" onClick={(event) =>
                  window.location = "/productimg"}>Upload Image</Button>
                 </Col>
                 </Table>
@@ -104,7 +104,7 @@ class MerchProfile extends Component {
 
 
 const mapStateToProps = state => ({
-    merchant: state.merchant.items
+    merchprod: state.merchprod.items
 });
 
 export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch }) (MerchProfile);
