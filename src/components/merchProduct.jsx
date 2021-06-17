@@ -86,12 +86,15 @@ this.setState({
 
     render(){
         return(
-            <div>
-                <p className="logOut" onClick={() => this.logOut()}>Log Out</p>
-                <p className="logOut" onClick={() => this.merchMain()}>Back</p>
-            <Container fluid>
-                Add Product 
-                <Table> 
+            <div className="prodmdiv">
+                <p className="logOutmp" onClick={() => this.logOut()}>Log Out</p>
+                <p className="logOutmp" onClick={() => this.merchMain()}>Back</p>
+            <Container className="mainAdd">
+               
+                <Table>
+                    <Row>
+                    <h1 className="headaddprod">Add Product</h1>
+                    </Row> 
                     <Row className="postStyle">
                         <Form onSubmit={(event)=>this.handleClick(event)}>
                         <Form.Group controlId="formBasicEmail">
@@ -117,7 +120,7 @@ this.setState({
                                 <Form.Text>
                                 </Form.Text>
                             </Form.Group>
-                            <Button variant="primary" type="submit" onClick={() => this.getMerchId()}>
+                            <Button className="buttonaddp" variant="primary" type="submit" onClick={() => this.getMerchId()}>
                                 Submit
                             </Button> 
                         </Form>

@@ -51,11 +51,6 @@ class PatronMain extends Component {
 
   
 
-// clickCart= event =>{
-//     event.preventDefault();
-//     this.props.addCart(this.patron_id, this.product_id)
-// }
-
     mapProduct(){
         const productImg = "http://localhost:5000/";
         console.log("product items", this.props.product);
@@ -77,8 +72,8 @@ class PatronMain extends Component {
                    
                 <Col>
                 <Button value={product._id} className="button" 
-                onClick={() => 
-                    this.handleClick(Button.value)}>Add to cart</Button>
+                onClick={(event) => 
+                    this.handleClick(event)}>Add to cart</Button>
                     <Col className="comments">
                     <p className="commentHead">Comments:</p>
                     <p className="comment">{product.comment}</p>
@@ -86,14 +81,16 @@ class PatronMain extends Component {
                 </Col>
                 </Table>
                 </div>
-                <Form onSubmit={(event)=>this.handleComment(event)}>
+                <Form >
                     <Form.Group controlId="formComments">
                         <Form.Label className="addComment">Post Comment</Form.Label>
-                        <Form.Control type="comment" placeholder="Comment Here"onChange={this.nameChange}/>
+                        <Form.Control type="comment" placeholder="Comment Here"onChange={this.onCommentChange}/>
                         <Form.Text className="loginText">
                         </Form.Text>
                     </Form.Group>
-                    <Button value={product._id} className="buttonp" variant="primary" type="submit">
+                    <Button value={product._id} className="buttonp"
+                    onClick={(ev) => 
+                    this.handleComment(ev)} >
                                 Post
                             </Button> 
                 </Form>
@@ -103,19 +100,26 @@ class PatronMain extends Component {
         ));
     }
 
-    handleClick=(product_id) => {
+    handleClick= event => {
         const jwt = localStorage.getItem('token');
     const userObject = jwtDecode(jwt);
     const patron_id = userObject._id;
     this.setState({
-        patron_id: patron_id
+        patron_id: patron_id,
     })
-        this.props.addCart(this.patron_id, product_id)
+        this.props.addCart(patron_id, event.currentTarget.value)
+    }
+
+    onCommentChange = event => {
+        const comment  = event.target.value;
+        this.setState({
+            comment: comment
+        })
     }
   
     handleComment= event => {
     event.preventDefualt();
-    this.props.commentProd(this.comment, this.product_id);
+    this.props.commentProd(this.comment, event.currentTarget.value);
 
     }
 

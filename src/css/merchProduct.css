@@ -1,6 +1,34 @@
-.logOut{
+.logOutmp{
     padding-right: 90%;
      font-size: smaller;
      padding-bottom: 0px;
      cursor: pointer;
+     color: #14213D;
   }
+
+  .prodmdiv{
+    background-color: #E5E5E5;
+  }
+
+  .mainAdd{
+      align-items: center;
+      padding-left: 22%;
+      padding-top: 7%;
+      border-bottom-style: groove;
+      border-bottom-width: 3px;
+      
+  }
+
+  
+  .headaddprod{
+    background-color: #E5E5E5;
+    /* padding-top: 30px;
+    padding-right: 25px;
+    padding-left: 25px; */
+    border-bottom-style: groove;
+    border-bottom-width: 3px;
+}
+
+.buttonaddp{
+    background-color: #14213D;
+}
