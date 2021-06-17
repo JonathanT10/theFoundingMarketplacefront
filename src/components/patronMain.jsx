@@ -93,7 +93,7 @@ class PatronMain extends Component {
                         <Form.Text className="loginText">
                         </Form.Text>
                     </Form.Group>
-                    <Button value={product._id} variant="primary" type="submit">
+                    <Button value={product._id} className="buttonp" variant="primary" type="submit">
                                 Post
                             </Button> 
                 </Form>
@@ -128,7 +128,7 @@ class PatronMain extends Component {
 
     render(){
         return(
-            <div className='main'>
+            <div className='mainp'>
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
                 <Container>
                 <h1 className='heading'>Welcome to main product page</h1>

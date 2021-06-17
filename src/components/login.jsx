@@ -61,7 +61,7 @@ class Login extends Component{
  render() {
     return(
         <div >
-        <Container className="main">
+        <Container className="main" >
             <p className ="merchantLog" onClick={() => this.merchantLog()}>Merchant Login</p>
             <Col className="head">
             <h1>The Founding</h1>

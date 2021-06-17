@@ -70,22 +70,25 @@ class MerchantMain extends Component {
 
     render(){
         return(
-            <div>
-                <p className="logOut" onClick={() => this.logOut()}>Log Out</p>
-                <Container>
-                    <Table>
+            <div className="mainm">
+                <p className="logOutMerch" onClick={() => this.logOut()}>Log Out</p>
+                <Container  className="merchMain" >
+                    <Table >
                         <Col>
                         <Row>
-                            <h1>Merchant Tasks</h1>
+                            <h1 className="headmain">Merchant Tasks</h1>
                         </Row>
                         <Row>
-                            <Button onClick={() => this.merchProfile()}>Merchant Profile</Button>
+                            <Button className="buttonm" onClick={() => this.merchProfile()}>Merchant Profile</Button>
                         </Row>
                         <Row>
-                            <Button onClick={() => this.merchProduct()}>Add Product</Button>
+                            <Button className="buttonm" onClick={() => this.merchProduct()}>Add Product</Button>
                         </Row>
                         <Row>
-                            <Button onClick={() => this.patronMain()}>View Patron Main Page</Button>
+                            <Button className="buttonm" onClick={() => this.patronMain()}>View Patron Main Page</Button>
+                        </Row>
+                        <Row>
+                            <Button className="buttonm" >Submit Request for Highlighted Status</Button>
                         </Row>
                         </Col>
                         <Col>
@@ -97,13 +100,10 @@ class MerchantMain extends Component {
                                     <Form.Text>
                                     </Form.Text>
                                 </Form.Group>
-                                <Button variant="primary" type="submit" onClick={() => this.getMerchId(), this.handleClick}>
+                                <Button className="buttonm"  variant="primary" type="submit" onClick={() => this.getMerchId(), this.handleClick}>
                                     Edit
                                 </Button>
                             </Form>
-                        </Row>
-                        <Row>
-                            <Button>Submit Request for Highlighted Status</Button>
                         </Row>
                         </Col>
                     </Table>

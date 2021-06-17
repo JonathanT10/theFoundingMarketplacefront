@@ -1,12 +1,41 @@
-.logOut{
+.logOutMerch{
     padding-right: 90%;
      font-size: smaller;
      padding-bottom: 0px;
      cursor: pointer;
+     color: #14213D;
+  }
+
+  .mainm{
+      background-color: #E5E5E5;
+      /* padding-bottom: 100%; */
+  }
+
+  .merchMain{
+      text-align: center;
+      align-items: center;
+      padding-top: 7%;
+      padding-left: 20%;
+      border-bottom-style: groove;
+      border-bottom-width: 3px;
+      
+  }
+
+  .headmain{
+      background-color: #E5E5E5;
+      padding-top: 30px;
+      padding-right: 25px;
+      padding-left: 25px;
+      border-bottom-style: groove;
+      border-bottom-width: 3px;
   }
 
   .row{
-      padding-top: 8px;
+      padding-top: 10px;
       padding-bottom: 5px;
       align-items: center;
+  }
+
+  .buttonm{
+      background-color: #14213D;
   }

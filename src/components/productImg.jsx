@@ -18,11 +18,10 @@ class ProductImg extends Component {
 
      imgChange = (event) => {
         this.setState({
-            selectedFile: event.target.files
-        });
-        this.setState({
+            selectedFile: event.target.files,
             isSelected: true
         });
+       console.log("image file", this.selectedFile)
 	};
 
      handleSubmission = (event) => {

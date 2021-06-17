@@ -1,4 +1,4 @@
-.main{
+.mainp{
     background-color: #14213D;
 }
 
@@ -26,6 +26,12 @@
       margin-top: 10px;
       background-color: #14213D;
   }
+
+  .buttonp{
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #14213D;
+}
 
   .heading{
       padding-bottom: 20%;
