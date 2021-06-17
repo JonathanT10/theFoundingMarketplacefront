@@ -15,6 +15,7 @@ import MerchProfile from './components/merchProfile';
 import GoogleMaps from './components/googleMaps';
 import ProductImg from './components/productImg';
 import AdminLogin from './components/adminLogin';
+import Cart from './components/cart'
 
 
 function App() {
@@ -35,6 +36,7 @@ return(
       <Route exact path="/googlemaps" component={GoogleMaps} />
       <Route exact path="/productimg" component={ProductImg} />
       <Route exact path="/adminlogin" component={AdminLogin} />
+      <Route exact path="/cart" component={Cart} />
     </Switch>
     </BrowserRouter>
   </div>

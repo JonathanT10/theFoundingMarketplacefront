@@ -104,7 +104,7 @@ class MerchProfile extends Component {
 
 
 const mapStateToProps = state => ({
-    product: state.product.items
+    merchant: state.merchant.items
 });
 
 export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch }) (MerchProfile);

@@ -13,5 +13,6 @@ export const NEW_REGISTRATION = 'NEW_REGISTRATION';
 export const NEW_MERCH = 'NEW_MERCH';
 
 export const FETCH_MERCH = 'FETCH_MERCH';
+export const FETCH_PATRON = 'FETCH_PATRON';
 
 export const NEW_CART = 'NEW_CART';

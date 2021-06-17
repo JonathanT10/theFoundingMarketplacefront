@@ -104,9 +104,6 @@ class PatronMain extends Component {
         const jwt = localStorage.getItem('token');
     const userObject = jwtDecode(jwt);
     const patron_id = userObject._id;
-    this.setState({
-        patron_id: patron_id,
-    })
         this.props.addCart(patron_id, event.currentTarget.value)
     }
 
@@ -129,11 +126,17 @@ class PatronMain extends Component {
         window.location = '/';
     };
 
+    
+    cart = () => {
+        window.location = '/cart';
+    };
+
 
     render(){
         return(
             <div className='mainp'>
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
+                <p className="logOut" onClick={() => this.cart()}>Cart</p>
                 <Container>
                 <h1 className='heading'>Welcome to main product page</h1>
                 {this.mapProduct()}

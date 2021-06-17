@@ -1,4 +1,4 @@
-import {  FETCH_MERCH, NEW_CART, FETCH_PATRON } from '../actions/types';
+import {  FETCH_PATRON } from '../actions/types';
 
 const initialState = {
     items: []
@@ -8,16 +8,6 @@ const initialState = {
 //action.payload is referring to the data being passed from the action to the reducer
 export default function(state = initialState, action){
     switch(action.type){ 
-        case FETCH_MERCH:
-            return {
-                ...state,
-                items: [action.payload, ...state.items]
-            }
-            case NEW_CART:
-            return {
-                ...state,
-                items: [action.payload, ...state.items]
-            }
             case FETCH_PATRON:
             return {
                 ...state,

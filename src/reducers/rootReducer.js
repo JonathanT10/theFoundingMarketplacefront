@@ -4,6 +4,8 @@ import authReducer from './authReducer';
 import editReducer from './editReducer';
 import registrationReducer from './registrationReducer';
 import userReducer from './userReducer';
+import patronReducer from './patronReducer';
+import merchantReducer from './merchantReducer';
 
 
 export default combineReducers({
@@ -11,5 +13,7 @@ export default combineReducers({
     auth: authReducer,
     edit: editReducer,
     registration: registrationReducer,
-    user: userReducer
+    user: userReducer,
+    patron: patronReducer,
+    merchant: merchantReducer,
 });
