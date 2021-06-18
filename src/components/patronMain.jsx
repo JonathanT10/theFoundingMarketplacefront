@@ -57,11 +57,13 @@ class PatronMain extends Component {
         return this.props.product.map(product => (
             <div key={product.id}>
                 <Container className='products'>
-                    <div clas='row'>
-                    <div class='col'>
+                    
+                    <div className='rowp'>
+                    <div className='colp'>
                     <img src={productImg+product.img}></img>
                     </div>
                     <div class='col'>
+                    
                 <Table>  
                 <p className="product">{product.name}</p>
                 <p className="product">{product.description}</p>
@@ -139,7 +141,10 @@ class PatronMain extends Component {
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
                 <p className="logOut" onClick={() => this.cart()}>Cart</p>
                 <Container>
-                <h1 className='heading'>Welcome to main product page</h1>
+                <Col className='heading'>
+                <h1 >Welcome to main product page</h1>
+                <p className="subp">A place for free trade, with a prioity on products made in USA.</p>
+                </Col>
                 {this.mapProduct()}
                 </Container>
             </div>

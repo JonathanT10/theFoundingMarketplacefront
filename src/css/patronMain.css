@@ -4,12 +4,14 @@
 
 .merchHead{
     background-color: #E5E5E5 ;
+    margin-bottom: 5%;
 }
 .products{
-    background-color: #FCA311;
+    background-color: #E5E5E5;
     border: #E5E5E5;
     border-width: 3px;
     border-style: groove;
+    margin-bottom: 7%;
   
 }
 
@@ -24,30 +26,36 @@
   .button{
       align-items: center;
       margin-top: 10px;
-      background-color: #14213D;
+      background-color: #FCA311;
   }
 
   .buttonp{
     align-items: center;
     margin-bottom: 10px;
-    background-color: #14213D;
+    background-color: #FCA311;
+    margin-right: 30%;
 }
 
   .heading{
-      padding-bottom: 20%;
+      padding-bottom: 8%;
       background-color: #E5E5E5;
       border: black;
       border-style:groove;
       border-width: 5px;
+      margin-bottom: 5%;
+      text-align: center;
   }
 
   .product{
     border-bottom-style:ridge;
-    margin-right: 65%;
-    background-color: #FCA311;
+    margin-left: 30%;
+    margin-right:2%;
+    background-color: #E5E5E5;
     text-align: center;
   
   }
+
+
 
   .flexbox-container {
     display: flex;
@@ -55,20 +63,29 @@
 
 
   .commentHead{
-      background-color: #E5E5E5 ;
+      background-color: #FCA311 ;
       text-align: center;
-      margin-top: 10%;
+      margin-top: 5%;
       margin-right: 30%;
-      margin-left:30%
+      margin-left:30%;
+      border-style: groove;
   }
   
   .comment{
-    background-color: #E5E5E5 ;
+    background-color: #FCA311;
     text-align: center;
     margin-left: 15%;
     margin-right: 15%;
+    
   }
 
   .comments{
-    background-color: #14213D 
+    background-color: #14213D;
+    border-style: groove;
+    margin-top: 3%;
+  }
+
+
+  .subp{
+      text-align: center;
   }

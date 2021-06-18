@@ -76,6 +76,7 @@ class Cart extends Component {
                 <Container>
                 <h1 className='heading'>Welcome to your cart.</h1>
                 {this.mapProductCart()}
+                <Button>Checkout</Button>
                 </Container>
             </div>
         )

@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import '../css/login.css';
+import '../css/regPage.css';
 import { connect } from 'react-redux';
 import { patrReg } from '../actions/registrationActions';
 
@@ -74,34 +74,33 @@ class PatronReg extends Component {
 
     render(){
         return(
-            <Container fluid>
-                <Table> 
-                    <Row className="postStyle">
+            <Container fluid className="regmain">
+                <Table > 
+                <h1 className="reghead">Patron Registration Page</h1>
+                    <Row className="reginfo">
                         <Form onSubmit={(event)=>this.handleClick(event)}>
                         <Form.Group controlId="formBasicEmail">
-                                <Form.Label className="loginText">Name</Form.Label>
+                                <Form.Label >Name</Form.Label>
                                 <Form.Control type="name" placeholder="Enter Name"onChange={this.nameChange}/>
-                                <Form.Text className="loginText">
+                                <Form.Text>
                                 </Form.Text>
                             </Form.Group>
                             <Form.Group>
-                            <Form.Label className="loginText">Email address</Form.Label>
+                            <Form.Label>Email address</Form.Label>
                                 <Form.Control type="email" placeholder="Enter email"onChange={this.emailChange}/>
-                                <Form.Text className="loginText">
+                                <Form.Text>
                                 -----We'll never share your email with anyone else.
                                 </Form.Text>
                             </Form.Group>
     
                             <Form.Group controlId="formBasicPassword">
-                                <Form.Label className="loginText">Password</Form.Label>
+                                <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password"onChange={this.passwordChange}/>
                             </Form.Group>
                             <Button variant="primary" type="submit">
                                 Register
                             </Button> 
                         </Form>
-                        
-                        Register page here
                     </Row>
                 </Table>
             </Container>

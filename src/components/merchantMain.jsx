@@ -41,12 +41,6 @@ class MerchantMain extends Component {
             const abt = {
                 about: this.state.about,
             }
-        //     const jwt=localStorage.getItem('token');
-        //    const merchObject = jwtDecode(jwt);
-        //    const merhcnat_id = merchObject._id;
-        //    this.setState({
-        //        merchant_id: merchant_id
-        //    })
             this.props.editAbout(this.state.merchant_id, abt);
             window.location="/productmain";
             }

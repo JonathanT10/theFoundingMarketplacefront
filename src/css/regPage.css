@@ -1,0 +1,18 @@
+.reginfo{
+    padding-left: 39%;
+}
+
+.regmain{
+    padding-top: 10%;
+    background-color: #E5E5E5;
+    padding-bottom: 1%;
+    border-bottom-style: groove;
+    border-bottom-width: 3px;
+}
+
+.reghead{
+    border-bottom-style: groove;
+    border-bottom-width: 3px;
+    margin-right: 30%;
+    margin-left: 30%;
+}

@@ -12,6 +12,7 @@ import Col from "react-bootstrap/Col";
 import jwtDecode from 'jwt-decode';
 import { fetchIdMerch } from '../actions/userActions';
 import { fetchIdMerchProd } from '../actions/productActions';
+import axios from 'axios';
 
 
 class MerchProfile extends Component {
@@ -21,7 +22,9 @@ class MerchProfile extends Component {
             merchant_id: '',
             productImg: '',
             product: [],
-            product_id: ''
+            product_id: '',
+            selectedFile: [],
+            isSelected: false,
         };
     }
 
@@ -62,6 +65,22 @@ class MerchProfile extends Component {
                 <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
                    
                 <Col>
+                <form onSubmit={this.handleSubmission} encType='multipart/form-data'>
+                    <input type="file" name="img" onChange={this.imgChange} />
+                    {this.isSelected ? ( 
+                        <div className="loginText">
+                            <p>Filename: {this.selectedFile[0].name}</p>
+                            <p>Filetype: {this.selectedFile[0].type}</p>
+                            <p>Size in bytes: {this.selectedFile[0].size}</p>
+                        </div>
+                    ) : (
+                    <p className="loginText">Select a file to show details</p>
+                    )}
+                    <div className="loginText">
+                    <button value={product.id} className="btn btn-success btn-md"  onClick={(event) => 
+                    this.handleSubmission(event)}>Submit</button>
+                    </div>  
+                </form> 
                 <Button value={product.id} className="button" onClick={(event) =>
                  window.location = "/productimg"}>Upload Image</Button>
                 </Col>
@@ -72,6 +91,42 @@ class MerchProfile extends Component {
             </div>
         ))));
     }
+
+    imgChange = (event) => {
+        this.setState({
+            selectedFile: event.target.files[0]
+        });
+       console.log("image file", this.selectedFile)
+	};
+
+
+    handleSubmission = (event) => {
+        event.preventDefault();
+       
+        console.log('imgchange',this.selectedFile[0])
+        const formData = new FormData();
+        formData.append("img", this.selectedFile[0]);
+
+
+        
+        var config = {
+            method: 'put',
+            url: `http://localhost:5000/api/product/uploadmulter/${event.currentTarget.value}`, 
+            data : formData,
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+        };
+
+        axios(config)
+        .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+        console.log(error);
+        });        
+        window.location = '/merchprofile';
+	};
 
 
     logOut = () => {
