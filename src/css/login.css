@@ -68,3 +68,8 @@ h2{
     background-color: #E5E5E5;
 }
 
+ .center{
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+ }

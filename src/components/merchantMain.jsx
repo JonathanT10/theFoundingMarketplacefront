@@ -62,6 +62,10 @@ class MerchantMain extends Component {
         window.location = '/merchprofile';
     }
 
+    reqHigh(){
+        window.location = '/reqhigh';
+    }
+
     render(){
         return(
             <div className="mainm">
@@ -82,7 +86,7 @@ class MerchantMain extends Component {
                             <Button className="buttonm" onClick={() => this.patronMain()}>View Patron Main Page</Button>
                         </Row>
                         <Row>
-                            <Button className="buttonm" >Submit Request for Highlighted Status</Button>
+                            <Button className="buttonm" onClick={() => this.reqHigh()}>Submit Request for Highlighted Status</Button>
                         </Row>
                         </Col>
                         <Col>

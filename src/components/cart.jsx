@@ -52,6 +52,7 @@ class Cart extends Component {
                     </div>
                 </Container>
             </div>
+            
               
               ))));
         
@@ -79,6 +80,7 @@ class Cart extends Component {
                 <Button>Checkout</Button>
                 </Container>
             </div>
+            
         )
     }
 

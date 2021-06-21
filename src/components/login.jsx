@@ -9,6 +9,7 @@ import '../css/login.css';
 import { connect } from 'react-redux';
 import { logIn } from '../actions/authActions';
 import { useCallback } from 'react';
+import flag from '../images/editflag.png'
 
 
 class Login extends Component{
@@ -96,6 +97,7 @@ class Login extends Component{
             </Table>
             </Col>
         </Container>
+        {/* <img class ="center" src = {flag} height="500" width="85%"></img> */}
         </div>
     )
 }

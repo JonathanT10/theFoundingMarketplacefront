@@ -16,3 +16,6 @@ export const FETCH_MERCH = 'FETCH_MERCH';
 export const FETCH_PATRON = 'FETCH_PATRON';
 
 export const NEW_CART = 'NEW_CART';
+
+export const NEW_REQ = 'NEW_REQ';
+export const ADD_REQ = 'ADD_REQ';
