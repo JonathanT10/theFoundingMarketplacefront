@@ -23,7 +23,7 @@ class MerchProfile extends Component {
             productImg: '',
             product: [],
             product_id: '',
-            selectedFile: [],
+            selectedFile: File,
             isSelected: false,
         };
     }
@@ -50,7 +50,7 @@ class MerchProfile extends Component {
         
         return this.props.merchprod.map(product => (
             product.map(product => (
-            <div key={product.id}>
+            <div key={product._id}>
                 <Container className='products'>
                     <div clas='row'>
                     <div class='col'>
@@ -69,15 +69,15 @@ class MerchProfile extends Component {
                     <input type="file" name="img" onChange={this.imgChange} />
                     {this.isSelected ? ( 
                         <div className="loginText">
-                            <p>Filename: {this.selectedFile[0].name}</p>
-                            <p>Filetype: {this.selectedFile[0].type}</p>
-                            <p>Size in bytes: {this.selectedFile[0].size}</p>
+                            <p>Filename: {this.selectedFile.name}</p>
+                            <p>Filetype: {this.selectedFile.type}</p>
+                            <p>Size in bytes: {this.selectedFile.size}</p>
                         </div>
                     ) : (
                     <p className="loginText">Select a file to show details</p>
                     )}
                     <div className="loginText">
-                    <button value={product.id} className="btn btn-success btn-md"  onClick={(event) => 
+                    <button value={product._id} className="btn btn-success btn-md"  onClick={(event) => 
                     this.handleSubmission(event)}>Submit</button>
                     </div>  
                 </form> 
@@ -96,16 +96,16 @@ class MerchProfile extends Component {
         this.setState({
             selectedFile: event.target.files[0]
         });
-       console.log("image file", this.selectedFile)
+       console.log("image file", this.state.selectedFile)
 	};
 
 
     handleSubmission = (event) => {
         event.preventDefault();
        
-        console.log('imgchange',this.selectedFile[0])
+        console.log('imgchange',this.state.selectedFile[0])
         const formData = new FormData();
-        formData.append("img", this.selectedFile[0]);
+        formData.append("img", this.state.selectedFile);
 
 
         
@@ -156,6 +156,7 @@ class MerchProfile extends Component {
 
 
 }
+
 
 
 const mapStateToProps = state => ({

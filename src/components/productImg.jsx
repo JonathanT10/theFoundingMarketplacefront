@@ -80,6 +80,8 @@ class ProductImg extends Component {
     }
 
 }
+const mapStateToProps = state => ({
+    selectedFile: state.selectedFile.items
+});
 
-
-export default (ProductImg);
+export default connect(mapStateToProps) (ProductImg);

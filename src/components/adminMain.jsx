@@ -42,7 +42,7 @@ approveHighUS(event){
                 return this.props.admin.map(admin => (
                    admin.map(admin =>
                     admin.map(admin =>
-                    <div key={admin.id}>
+                    <div key={admin._id}>
                         <Container >
                         <ul>
                         <li >{admin.request}</li>
