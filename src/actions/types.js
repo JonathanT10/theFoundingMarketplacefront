@@ -19,3 +19,6 @@ export const NEW_CART = 'NEW_CART';
 
 export const NEW_REQ = 'NEW_REQ';
 export const ADD_REQ = 'ADD_REQ';
+export const FETCH_ADMINUS = 'FETCH_ADMINUS';
+export const DELETE_HIGHUS = 'DELETE_HIGHUS';
+export const STATUS_HIGHUS = 'STATUS_HIGHUS';

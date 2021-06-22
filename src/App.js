@@ -17,6 +17,7 @@ import ProductImg from './components/productImg';
 import AdminLogin from './components/adminLogin';
 import Cart from './components/cart';
 import ReqHigh from './components/reqHigh';
+import AdminMain from './components/adminMain';
 
 
 function App() {
@@ -39,6 +40,7 @@ return(
       <Route exact path="/adminlogin" component={AdminLogin} />
       <Route exact path="/cart" component={Cart} />
       <Route exact path="/reqhigh" component={ReqHigh} />
+      <Route exact path="/adminmain" component={AdminMain} />
     </Switch>
     </BrowserRouter>
   </div>

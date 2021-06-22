@@ -8,6 +8,7 @@ import patronReducer from './patronReducer';
 import merchantReducer from './merchantReducer';
 import merchProdreducer from './merchProdreducer';
 import reqReducer from './reqReducer';
+import adminReducer from './adminReducer';
 
 
 export default combineReducers({
@@ -20,4 +21,5 @@ export default combineReducers({
     merchant: merchantReducer,
     merchprod: merchProdreducer,
     req: reqReducer,
+    admin: adminReducer,
 });

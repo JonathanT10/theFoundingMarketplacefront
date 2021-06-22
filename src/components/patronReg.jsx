@@ -53,22 +53,29 @@ class PatronReg extends Component {
     window.location="/patronmain";
     }
 
-//    fetchEmailVerificationApi = event => (async () => {
-//        event.preventDefault();
-//     try{
-//         const response = await fetch( `http://apilayer.net/api/check?access_key=c6325710e8c28c60a3f62888787e73c8&email=${this.email}`)
-//         const json = await response.json()
-//         this.setState({data: json.score})
-//     } catch(e) {
-//         console.error(e)
-//     }
-//     if (this.data >= .5)
-//         alert("This is not a valid email.")
+    
+   emailVerif = async() =>{
+        const response = await fetch( `http://apilayer.net/api/check?access_key=c6325710e8c28c60a3f62888787e73c8&email=${this.state.email}`)
+        const json = await response.json()
+        this.setState({data: json.score})
+        console.log(this.state.data);
+   }
 
-//     else (
-//         this.handleClick()
-//     )
-//    });
+   fetchEmailVerificationApi = event => {
+       event.preventDefault();
+    try{
+        this.emailVerif();
+    } catch(e) {
+        console.error(e)
+    }
+    if (this.state.data >= .5)
+        alert("This is not a valid email.")
+
+    else (
+        this.handleClick(event)
+    )
+   };
+
 
    
 
@@ -78,7 +85,7 @@ class PatronReg extends Component {
                 <Table > 
                 <h1 className="reghead">Patron Registration Page</h1>
                     <Row className="reginfo">
-                        <Form onSubmit={(event)=>this.handleClick(event)}>
+                        <Form onSubmit={(event)=>this.fetchEmailVerificationApi(event)}>
                         <Form.Group controlId="formBasicEmail">
                                 <Form.Label >Name</Form.Label>
                                 <Form.Control type="name" placeholder="Enter Name"onChange={this.nameChange}/>
@@ -97,7 +104,7 @@ class PatronReg extends Component {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password"onChange={this.passwordChange}/>
                             </Form.Group>
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" onClick={(event) => this.fetchEmailVerificationApi(event)} type="submit">
                                 Register
                             </Button> 
                         </Form>

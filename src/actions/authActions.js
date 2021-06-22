@@ -48,14 +48,14 @@ export const adminLogIn = (postaAuth) => {
             email: postaAuth.email, 
             password: postaAuth.password
         })
-        .then(aAuth => ({
+        .then(aAuth =>  ({
             type: NEW_AUTH,
             paload: aAuth.data
         }))
         .then(response => {
             const  token  = response.paload;
             localStorage.setItem('token', token);
-            window.location="/merchantmain";
+            window.location="/adminmain";
         }).catch(error => {
             alert("Username or Password invalid, please try again")
             console.log('Error', error);

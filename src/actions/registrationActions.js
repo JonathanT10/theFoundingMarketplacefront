@@ -16,6 +16,7 @@ export const patrReg = (postpReg) => dispatch => {
     .catch(error => {
         alert("Invalid request")
         console.log('Error', error);
+        window.location = "/"
     });
 }
 
@@ -37,3 +38,4 @@ export const merchReg = (postmReg) => dispatch => {
         console.log('Error', error);
     });
 }
+

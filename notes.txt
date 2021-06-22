@@ -1,9 +1,7 @@
 
 Things to come back to:
-The edit about section for merchants is not working correctly.
-The admin put is not working correctly.
-Getting image to upload and display on front end.
-Google map api
+Getting image to upload
+Google map dynamic location geocoding
 
 
 
@@ -52,3 +50,13 @@ Google API key
     long and lat for test merchants
 
     32.74166491698227, -96.2855366309602
+
+
+
+    hunter api
+
+    c7737dabda20c52a84b33e88ccf512350a58ecaa
+
+
+    const hunter = axios.get(`https://api.hunter.io/v2/email-verifier?${postpAuth.email}&api_key=c7737dabda20c52a84b33e88ccf512350a58ecaa`);
+            console.log(hunter);
