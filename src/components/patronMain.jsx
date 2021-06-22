@@ -118,8 +118,8 @@ class PatronMain extends Component {
     }
   
     handleComment= event => {
-    event.preventDefualt();
-    this.props.commentProd(this.comment, event.currentTarget.value);
+
+    this.props.commentProd(this.state.comment, event.currentTarget.value);
 
     }
 
@@ -159,4 +159,4 @@ const mapStateToProps = state => ({
     product: state.product.items
 });
 
-export default  connect(mapStateToProps, { fetchProduct, addCart }) (PatronMain);
+export default  connect(mapStateToProps, { fetchProduct, addCart, commentProd }) (PatronMain);

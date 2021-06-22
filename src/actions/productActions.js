@@ -85,7 +85,7 @@ export const upImage = (imageFormObj, product_id) => {
 
 export const commentProd = (comm, product_id) => dispatch => {
     axios .put(`http://localhost:5000/api/product/${product_id}`,{
-        comment: comm.comment
+        comment: comm
     })
     .then(comment => dispatch({
         type: COMM_PROD,
