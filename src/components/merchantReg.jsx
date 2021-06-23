@@ -56,7 +56,7 @@ class MerchantReg extends Component {
         hqAddress: this.state.hqAddress
     }
     this.props.merchReg(reg);
-    window.location="/merchantmain";
+    window.location="/";
     }
 
     render(){

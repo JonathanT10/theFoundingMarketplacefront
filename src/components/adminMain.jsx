@@ -44,12 +44,20 @@ approveHighUS(event){
                     admin.map(admin =>
                     <div key={admin._id}>
                         <Container >
-                        <ul>
-                        <li >{admin.request}</li>
-                        <li>{admin.merchantId}</li>
+                        <Table>
+                        <Col>
+                        <Row>
+                       
+                        <p>{admin.request}</p>
+                        <p>{admin.merchantId}</p>
+                        </Row>
+                        <Row>
                         <Button value={admin.merchantId} onClick={(event) => this.approveHighUS(event)}>Approve</Button>
                         <Button value={admin._id} onClick={(event) => this.delHighUS(event)}>Deny</Button>
-                        </ul>
+                        </Row>
+                        
+                        </Col>
+                        </Table>
                         </Container>
                     </div>
                 ))));

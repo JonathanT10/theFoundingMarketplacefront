@@ -25,7 +25,6 @@ class MerchProfile extends Component {
             product_id: '',
             selectedFile: File,
             isSelected: false,
-            user: {},
         };
     }
 
@@ -47,7 +46,6 @@ class MerchProfile extends Component {
 
     mapProduct(){
         const productImg = "http://localhost:5000/";
-        const user = {};
         console.log("product items", this.props.mproduct);
         
         return this.props.merchprod.map(product => (
@@ -64,8 +62,6 @@ class MerchProfile extends Component {
                 <p className="product">{product.description}</p>
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
-                <p className="commentHead">Comments:</p>
-                <p className="comment">{product.comment}</p>
                 <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
                    
                 <Col>
@@ -81,21 +77,21 @@ class MerchProfile extends Component {
                     <p className="loginText">Select a file to show details</p>
                     )}
                     <div className="loginText">
-                    <button value={product._id} className="button"  onClick={(event) => 
-                    this.handleSubmission(event)}>Upload Image</button>
+                    <button value={product._id} className="btn btn-success btn-md"  onClick={(event) => 
+                    this.handleSubmission(event)}>Submit</button>
                     </div>  
                 </form> 
+                <Button value={product.id} className="button" onClick={(event) =>
+                 window.location = "/productimg"}>Upload Image</Button>
                 </Col>
                 </Table>
                 </div>
-               
                 </div>
                 </Container>
             </div>
         ))));
     }
 
-    
     imgChange = (event) => {
         this.setState({
             selectedFile: event.target.files[0]
@@ -142,10 +138,6 @@ class MerchProfile extends Component {
         window.location = '/merchantmain';
     };
 
-    merchProduct(){
-        window.location = '/merchproduct';
-    }
-
 
     render(){
         return(
@@ -154,13 +146,10 @@ class MerchProfile extends Component {
                 <p className="logOut" onClick={() => this.merchMain()}>Back</p>
                 <Container>
                 <h1 className="merchHead">Merchant Profile</h1>
-               
+                {/* <h2>{this.props.merchant.about}</h2>
+                <p>{this.props.merchant.hqAddress}</p> */}
                 {this.mapProduct()}
-                <Row>
-                            <Button className="buttonm" onClick={() => this.merchProduct()}>Add Product</Button>
-                </Row>
                 </Container>
-                
             </div>
         )
     }
@@ -171,8 +160,7 @@ class MerchProfile extends Component {
 
 
 const mapStateToProps = state => ({
-    merchprod: state.merchprod.items,
-    user: state.user.items
+    merchprod: state.merchprod.items
 });
 
 export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch }) (MerchProfile);

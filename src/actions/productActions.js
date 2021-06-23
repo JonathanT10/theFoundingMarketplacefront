@@ -2,9 +2,7 @@ import { FETCH_PRODUCT, NEW_PRODUCT, NEW_IMAGE,
     FETCHID_PRODUCT, MERCHID_PRODUCT, COMM_PROD} from './types';
 import axios from 'axios';
 
-//each action creator is a function
-//thunk middleware allows us to call dispatch function directly so we can make asynchronous requests
-//dispatch is like resolving a promise; dispatch allows for sending of data
+
 export const fetchProduct = () => dispatch => {
     axios.get('http://localhost:5000/api/product/')
         .then(product => dispatch({
@@ -86,6 +84,21 @@ export const upImage = (imageFormObj, product_id) => {
 export const commentProd = (comm, product_id) => dispatch => {
     axios .put(`http://localhost:5000/api/product/${product_id}`,{
         comment: comm
+    })
+    .then(comment => dispatch({
+        type: COMM_PROD,
+        payload: comment.data
+    }))
+    .catch(error => {
+    alert("Invalid request")
+    console.log('Error', error);
+    });
+
+}
+
+export const replyProd = (reply, product_id) => dispatch => {
+    axios .put(`http://localhost:5000/api/product/${product_id}/reply`,{
+        reply: reply
     })
     .then(comment => dispatch({
         type: COMM_PROD,

@@ -50,7 +50,7 @@ class PatronReg extends Component {
         hqAddress: this.state.hqAddress
     }
     this.props.patrReg(reg);
-    window.location="/patronmain";
+    window.location="/";
     }
 
     

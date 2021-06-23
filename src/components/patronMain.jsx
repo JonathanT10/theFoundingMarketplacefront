@@ -29,7 +29,9 @@ class PatronMain extends Component {
             patron_id: '',
             product_id: '',
             productImg: '',
-            comment: ''
+            comment: '',
+            lat: '',
+            lng: '',
         }
     }
 
@@ -69,8 +71,8 @@ class PatronMain extends Component {
                 <p className="product">{product.description}</p>
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
-                <Button className="button" 
-                onClick={() => window.location = '/googlemaps'}>Google Map</Button>
+                <Button className="button" value={product.lat, product.lng}
+                onClick={(event) => window.location='/googlemaps'}>Google Map</Button>
                    
                 <Col>
                 <Button value={product._id} className="button" 

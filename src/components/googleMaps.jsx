@@ -14,14 +14,13 @@ export class Maps extends React.Component {
     };
 
     back = () => {
-        localStorage.removeItem('token');
         window.location = '/patronmain';
     };
 
     render() {
       const mapStyles = {
-        width: "50%",
-        height: "50%",
+        width: "60%",
+        height: "60%",
       };
       return (
           <div>

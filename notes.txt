@@ -60,3 +60,57 @@ Google API key
 
     const hunter = axios.get(`https://api.hunter.io/v2/email-verifier?${postpAuth.email}&api_key=c7737dabda20c52a84b33e88ccf512350a58ecaa`);
             console.log(hunter);
+
+
+
+WORKING MAPS
+
+            import React, { Component } from 'react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import '../css/googleMaps.css';
+import Row from 'react-bootstrap/Row';
+import PatronMain from './patronMain'
+
+
+
+export class Maps extends React.Component {
+
+    logOut = () => {
+        localStorage.removeItem('token');
+        window.location = '/';
+    };
+
+    back = () => {
+        localStorage.removeItem('token');
+        window.location = '/patronmain';
+    };
+
+    render() {
+      const mapStyles = {
+        width: "50%",
+        height: "50%",
+      };
+      return (
+          <div>
+                
+                    <p className="lOut" onClick={() => this.logOut()}>Logout</p>
+                    <p className="lOut" onClick={() => this.back()}>Back</p>
+         
+                <Map
+                google={this.props.google}
+                zoom={15}
+                style={mapStyles}
+                initialCenter={{lat: 32.74166491698227, lng: -96.2855366309602}}
+                >
+                    <Marker postion={{ lat: 32.74166491698227, lng: -96.2855366309602 }} />
+                </Map>
+        </div>
+      );
+    }
+  }
+
+
+
+  export default GoogleApiWrapper({
+    apiKey: 'AIzaSyD3zjpaRKDi2kra4MN-pmjOtuD5Lloykts'
+  })(Maps);

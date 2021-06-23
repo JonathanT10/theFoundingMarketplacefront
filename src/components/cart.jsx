@@ -10,8 +10,8 @@ import Button from 'react-bootstrap/Button';
 import Col from "react-bootstrap/Col";
 import jwtDecode from 'jwt-decode';
 import { fetchIdPatron } from '../actions/userActions';
-
-
+import { addPastOrders } from '../actions/userActions';
+import { emptyCart } from '../actions/userActions';
 
 
 
@@ -20,6 +20,7 @@ class Cart extends Component {
         super(props);
         this.state = {
            patron: {},
+           pastOrders: [],
            
         }
     }
@@ -57,6 +58,17 @@ class Cart extends Component {
               ))));
         
     }
+
+    checkout = (event) => {
+        event.preventDefault();
+        const pOrder = this.props.patron.splice(0,this.props.patron.length);
+        console.log(pOrder[0]);
+        const jwt = localStorage.getItem('token');
+        const userObject = jwtDecode(jwt);
+        const patron_id = userObject._id;
+        this.props.addPastOrders(patron_id);
+        this.props.emptyCart(patron_id);
+    }
     
 
     logOut = () => {
@@ -77,7 +89,7 @@ class Cart extends Component {
                 <Container>
                 <h1 className='heading'>Welcome to your cart.</h1>
                 {this.mapProductCart()}
-                <Button>Checkout</Button>
+                <Button onClick={(event) => this.checkout(event)}>Checkout</Button>
                 </Container>
             </div>
             
@@ -90,4 +102,4 @@ const mapStateToProps = state => ({
     patron: state.patron.items
 });
 
-export default connect(mapStateToProps, { fetchIdPatron }) (Cart);
+export default connect(mapStateToProps, { fetchIdPatron, addPastOrders, emptyCart }) (Cart);
