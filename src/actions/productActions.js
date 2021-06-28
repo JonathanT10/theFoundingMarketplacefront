@@ -42,11 +42,13 @@ export const fetchIdMerchProd = (merchant_id) => dispatch => {
 
 export const createProduct = (postProduct) => dispatch => {
     axios.post('http://localhost:5000/api/product/',{
-            name: postProduct.name,
-            description: postProduct.description,
-            addressMade: postProduct.addressMade,
-            price: postProduct.price,
-            merchantId: postProduct.merchant_id,
+        
+        name: postProduct.name,
+        description: postProduct.description,
+        addressMade: postProduct.addressMade,
+        price: postProduct.price,
+        merchantId: postProduct.merchant_id,
+        merchName: postProduct.merchName
         })
         .then(product => dispatch({
             type: NEW_PRODUCT,

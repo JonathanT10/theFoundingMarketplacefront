@@ -21,6 +21,7 @@ class MerchantProd extends Component {
             addressMade: '',
             price: '',
             merchant_id: '',
+            merchName: '',
         };
     }
 
@@ -57,8 +58,10 @@ getMerchId() {
 const jwt =localStorage.getItem('token');
 const merchObject = jwtDecode(jwt);
 const merchant_id = merchObject._id;
+const merchantName = merchObject.name;
 this.setState({
-    merchant_id: merchant_id
+    merchant_id: merchant_id,
+    merchName: merchantName
 })
 
 }
@@ -70,7 +73,8 @@ this.setState({
         description: this.state.description,
         addressMade: this.state.addressMade,
         price: this.state.price,
-        merchant_id: this.state.merchant_id
+        merchant_id: this.state.merchant_id,
+        merchName: this.state.merchName,
     }
     this.props.createProduct(prod);
     window.location="/merchantmain";

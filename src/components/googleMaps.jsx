@@ -30,11 +30,24 @@ export class Maps extends React.Component {
          
                 <Map
                 google={this.props.google}
-                zoom={15}
+                zoom={9}
                 style={mapStyles}
                 initialCenter={{lat: 32.74166491698227, lng: -96.2855366309602}}
                 >
-                    <Marker postion={{ lat: 32.74166491698227, lng: -96.2855366309602 }} />
+                    <Marker 
+                    label='American Made'
+                    postion={{ lat: 32.74166491698227, lng: -96.2855366309602 }} 
+                    />
+                    <Marker
+                    label='Fine Leather Goods'
+                    position={{   lat: 32.8636206,
+                    lng: -96.68051989999999 }}
+                    />
+                    <Marker
+                    label='USA Knives'
+                    position={{   lat: 32.2133162,
+                    lng: -95.8354492 }}
+                    />
                 </Map>
         </div>
       );
