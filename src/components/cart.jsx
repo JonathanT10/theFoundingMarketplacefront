@@ -68,8 +68,17 @@ class Cart extends Component {
         const patron_id = userObject._id;
         this.props.addPastOrders(patron_id);
         this.props.emptyCart(patron_id);
+        window.location = '/pastorders';
     }
-    
+
+    clearCart = (event) => {
+        event.preventDefault();
+        const jwt = localStorage.getItem('token');
+        const userObject = jwtDecode(jwt);
+        const patron_id = userObject._id;
+        this.props.emptyCart(patron_id);
+        window.location = '/cart';
+    }    
 
     logOut = () => {
         localStorage.removeItem('token');
@@ -95,6 +104,7 @@ class Cart extends Component {
                 <h1 className='heading'>Welcome to your cart.</h1>
                 {this.mapProductCart()}
                 <Button onClick={(event) => this.checkout(event)}>Checkout</Button>
+                <Button className="clearCart" onClick={(event) => this.clearCart(event)}>Clear Cart</Button>
                 </Container>
             </div>
             

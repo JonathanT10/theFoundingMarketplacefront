@@ -5,6 +5,13 @@ Google map dynamic location geocoding
 
 
 
+    name: postProduct.name,
+        description: postProduct.description,
+        addressMade: postProduct.addressMade,
+        price: postProduct.price,
+        merchantId: postProduct.merchant_id,
+        merchName: postProduct.merchName
+
 
 
 Have to decide where best to put upload image. I started the code which is here:

@@ -56,7 +56,7 @@
   }
 
   .address{
-    margin-left: 30%;
+    margin-left: 2%;
     margin-right:2%;
     background-color: #E5E5E5;
     text-align: center;
@@ -96,4 +96,8 @@
 
   .subp{
       text-align: center;
+  }
+
+  .clearCart{
+      margin-left: 10%;
   }

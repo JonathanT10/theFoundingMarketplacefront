@@ -39,3 +39,20 @@
   .buttonm{
       background-color: #14213D;
   }
+
+
+  .adminbody{
+      margin-right: 65%;
+  }
+
+  .product{
+    border-bottom-style:ridge;
+    margin-left: 1%;
+    background-color: #E5E5E5;
+    text-align: center;
+  
+  }
+
+  .clearCart{
+    margin-left: 10%;
+}

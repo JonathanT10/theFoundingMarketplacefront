@@ -57,13 +57,13 @@ emptyReq(){
                         <Table>
                         <Col>
                         <Row>
-                       
-                        <p>{admin.request}</p>
-                        <p>{admin.merchantId}</p>
+                        <p className="product">{admin.request}</p>
+                        <p className="product">{admin.merchantId}</p>
+                        
                         </Row>
                         <Row>
                         <Button value={admin.merchantId} onClick={(event) => this.approveHighUS(event)}>Approve</Button>
-                        <Button value={admin._id} onClick={(event) => this.delHighUS(event)}>Deny</Button>
+                        <Button className="clearCart"  value={admin._id} onClick={(event) => this.delHighUS(event)}>Deny</Button>
                         </Row>
                         
                         </Col>
@@ -101,13 +101,13 @@ emptyReq(){
                         <Row>
                             <h1 className="headmain">Admin Tasks</h1>
                         </Row>
-                        <h3>Made in US requests</h3>
-                            <Col>
+                        <h3 className="adminbody">Made in US requests</h3>
+                            <Col className="adminbody">
                             <Row>
                             {this.mapHighUS()}
                             </Row>
                             </Col>
-                            <Button onClick={() => this.emptyReq()}>Clear Requests</Button>
+                            <Button className="adminbody" onClick={() => this.emptyReq()}>Clear Requests</Button>
                         </Col>
                     </Table>
                 </Container>
