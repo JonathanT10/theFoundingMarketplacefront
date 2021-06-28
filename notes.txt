@@ -1,7 +1,8 @@
 
 Things to come back to:
-Getting image to upload
+Order history page is not displaying past orders
 Google map dynamic location geocoding
+
 
 
 

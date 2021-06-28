@@ -1,21 +1,16 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import '../css/patronMain.css'
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
-import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Col from "react-bootstrap/Col";
 import jwtDecode from 'jwt-decode';
-import { fetchIdPatron } from '../actions/userActions';
-import { addPastOrders } from '../actions/userActions';
-import { emptyCart } from '../actions/userActions';
+import { fetchIdPatronPO } from '../actions/pastAction';
 
 
 
-class Cart extends Component {
+
+class PastOrders extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -29,15 +24,17 @@ class Cart extends Component {
         const jwt = localStorage.getItem('token');
     const userObject = jwtDecode(jwt);
     const patron_id = userObject._id;
-    this.props.fetchIdPatron(patron_id);
+    this.props.fetchIdPatronPO(patron_id);
+    console.log(this.props.pastOrder)
     }
 
 
     mapProductCart(){
         const productImg = "http://localhost:5000/";
-        console.log("product items", this.props.patron);
-        return this.props.patron.map(cart => (
-            cart.map(product => (
+        console.log("history items", this.props.user);
+        return this.props.pastOrder.map(pastOrders => (
+            pastOrders.map(product => (
+                product.map(product => (
             <div key={product.id}>
                 <Container className='products'>
                     <img src={productImg+product.img}></img>
@@ -55,20 +52,11 @@ class Cart extends Component {
             </div>
             
               
-              ))));
+              ))))));
         
     }
 
-    checkout = (event) => {
-        event.preventDefault();
-        const pOrder = this.props.patron.splice(0,this.props.patron.length);
-        console.log(pOrder[0]);
-        const jwt = localStorage.getItem('token');
-        const userObject = jwtDecode(jwt);
-        const patron_id = userObject._id;
-        this.props.addPastOrders(patron_id);
-        this.props.emptyCart(patron_id);
-    }
+
     
 
     logOut = () => {
@@ -81,20 +69,14 @@ class Cart extends Component {
         window.location = '/patronmain';
     };
 
-    past = () => {
-        window.location = '/pastorders';
-    };
-
     render(){
         return(
             <div className='mainp'>
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
-                <p className="logOut" onClick={() => this.main()}>Back</p>
-                <p className="logOut" onClick={() => this.past()}>Order History</p>
+                <p className="logOut" onClick={() => this.main()}>Home</p>
                 <Container>
-                <h1 className='heading'>Welcome to your cart.</h1>
+                <h1 className='heading'>Order History</h1>
                 {this.mapProductCart()}
-                <Button onClick={(event) => this.checkout(event)}>Checkout</Button>
                 </Container>
             </div>
             
@@ -104,7 +86,7 @@ class Cart extends Component {
 }
 
 const mapStateToProps = state => ({
-    patron: state.patron.items
+    pastOrder: state.pastOrder.items
 });
 
-export default connect(mapStateToProps, { fetchIdPatron, addPastOrders, emptyCart }) (Cart);
+export default connect(mapStateToProps, { fetchIdPatronPO }) (PastOrders);

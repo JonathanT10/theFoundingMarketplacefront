@@ -78,7 +78,7 @@ class MerchProfile extends Component {
                             <p>Size in bytes: {this.selectedFile.size}</p>
                         </div>
                     ) : (
-                    <p className="loginText">Select a file to show details</p>
+                    <p className="loginText">Select a file</p>
                     )}
                     <div className="loginText">
                     <button value={product._id} className="button"  onClick={(event) => 

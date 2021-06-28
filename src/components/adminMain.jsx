@@ -11,6 +11,8 @@ import '../css/merchantMain.css'
 import { fetchAdminUS } from '../actions/adminAction';
 import { deleteHighUS  } from '../actions/adminAction';
 import { statusHighUS } from '../actions/adminAction';
+import { Collection } from 'mongoose';
+import { emptyRequest } from '../actions/adminAction';
 
 class AdminMain extends Component {
     constructor(props){
@@ -19,7 +21,8 @@ class AdminMain extends Component {
             about: '',
             merchant_id:'',
             highUS: [],
-            req: {}
+            req: {},
+            admin_id: ''
         }
     }
 
@@ -34,6 +37,13 @@ delHighUS(event){
 
 approveHighUS(event){
     this.props.statusHighUS(event.currentTarget.value)
+}
+
+emptyReq(){
+    const jwt =localStorage.getItem('token');
+        const adminObject = jwtDecode(jwt);
+        const admin_id = adminObject._id;
+    this.props.emptyRequest(admin_id)
 }
         
             mapHighUS(){
@@ -92,12 +102,12 @@ approveHighUS(event){
                             <h1 className="headmain">Admin Tasks</h1>
                         </Row>
                         <h3>Made in US requests</h3>
-                        <Row>
-                        <Col>
-                            
-                            </Col>
+                            <Col>
+                            <Row>
                             {this.mapHighUS()}
-                        </Row>
+                            </Row>
+                            </Col>
+                            <Button onClick={() => this.emptyReq()}>Clear Requests</Button>
                         </Col>
                     </Table>
                 </Container>
@@ -115,4 +125,4 @@ const mapStateToProps = state => ({
 
 
 
-export default connect(mapStateToProps, { fetchAdminUS, deleteHighUS, statusHighUS }) (AdminMain);
+export default connect(mapStateToProps, { fetchAdminUS, deleteHighUS, statusHighUS, emptyRequest }) (AdminMain);

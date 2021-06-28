@@ -1,6 +1,7 @@
 import { FETCH_ADMINUS } from './types';
 import { DELETE_HIGHUS } from './types';
 import { STATUS_HIGHUS } from './types';
+import { EMPTY_REQUEST} from './types';
 
 import axios from 'axios';
 
@@ -37,4 +38,16 @@ export const statusHighUS = (merchantId) => dispatch => {
     console.log('Error', error);
 });
     
+}
+
+export const emptyRequest = (admin_id) => dispatch => {
+    axios .put(`http://localhost:5000/api/admin/${admin_id}/empty`)
+    .then(highUS => dispatch({
+        type: EMPTY_REQUEST,
+        payload: highUS
+    }))
+    .catch(error => {
+        alert("Invalid request")
+        console.log('Error', error);
+    });
 }

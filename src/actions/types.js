@@ -18,9 +18,11 @@ export const FETCH_PATRON = 'FETCH_PATRON';
 export const NEW_CART = 'NEW_CART';
 export const NEW_PASTORDERS = 'NEW_PASTORDERS';
 export const EMPTY_CART = 'EMPTY_CART';
+export const FETCH_PATRONPPO = 'FETCH_PATRONPPO';
 
 export const NEW_REQ = 'NEW_REQ';
 export const ADD_REQ = 'ADD_REQ';
 export const FETCH_ADMINUS = 'FETCH_ADMINUS';
 export const DELETE_HIGHUS = 'DELETE_HIGHUS';
 export const STATUS_HIGHUS = 'STATUS_HIGHUS';
+export const EMPTY_REQUEST = 'EMPTY_REQUEST';

@@ -1,4 +1,4 @@
-import { FETCH_ADMINUS } from '../actions/types';
+import { EMPTY_REQUEST, FETCH_ADMINUS } from '../actions/types';
 import { DELETE_HIGHUS } from '../actions/types';
 import { STATUS_HIGHUS } from '../actions/types';
 const initialState = {
@@ -24,6 +24,11 @@ export default function(state = initialState, action){
                             ...state,
                             items: [action.payload, ...state.items]
                         }
+                        case EMPTY_REQUEST:
+                            return{
+                                ...state,
+                                items: [action.payload, ...state.items]
+                            }
         default: 
             return state;
     }
