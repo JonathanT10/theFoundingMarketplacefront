@@ -15,7 +15,7 @@ import { fetchIdMerchProd } from '../actions/productActions';
 import axios from 'axios';
 
 
-class MerchProfile extends Component {
+class PatMerchProfile extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -163,4 +163,4 @@ const mapStateToProps = state => ({
     merchprod: state.merchprod.items
 });
 
-export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch }) (MerchProfile);
+export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch }) (PatMerchProfile);

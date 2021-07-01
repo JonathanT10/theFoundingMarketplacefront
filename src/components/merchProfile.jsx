@@ -95,6 +95,18 @@ class MerchProfile extends Component {
         ))));
     }
 
+    mapUser(){
+        return this.props.user.map(merchant => (
+            <div key={merchant.id}>
+                <Container>
+                    <p className="merchName">{merchant.name}</p>
+                    <p>{merchant.hqAddress}</p>
+                    <p>{merchant.about}</p>
+                </Container>
+            </div>
+        ));
+    }
+
     
     imgChange = (event) => {
         this.setState({
@@ -153,7 +165,10 @@ class MerchProfile extends Component {
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
                 <p className="logOut" onClick={() => this.merchMain()}>Back</p>
                 <Container>
-                <h1 className="merchHead">Merchant Profile</h1>
+                    <div className="merchHead">
+                        <h1 className="merchHead">Merchant Profile</h1>
+                       <p className='about'>{this.mapUser()}</p> 
+                    </div>
                
                 {this.mapProduct()}
                 <Row>

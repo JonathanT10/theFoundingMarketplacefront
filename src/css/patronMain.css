@@ -4,7 +4,7 @@
 
 .merchHead{
     background-color: #E5E5E5 ;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
 .products{
     background-color: #E5E5E5;
@@ -100,4 +100,9 @@
 
   .clearCart{
       margin-left: 10%;
+  }
+
+  .merchName{
+      font-size: x-large;
+      font-style: bold;
   }

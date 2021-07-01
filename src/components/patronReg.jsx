@@ -55,7 +55,7 @@ class PatronReg extends Component {
 
     
    emailVerif = async() =>{
-        const response = await fetch( `http://apilayer.net/api/check?&email=${this.state.email}`)
+        const response = await fetch( `http://apilayer.net/api/check?access_key=c6325710e8c28c60a3f62888787e73c8&email=${this.state.email}`)
         const json = await response.json()
         this.setState({data: json.score})
         console.log(this.state.data);
