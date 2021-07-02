@@ -29,26 +29,12 @@ class PatMerchProfile extends Component {
     }
 
 
-    componentDidMount(){
-        const jwt = localStorage.getItem('token');
-        const userObject = jwtDecode(jwt);
-        const merchant_id = userObject._id;
-        this.setState({
-            merchant_id: merchant_id
-        })
-        this.props.fetchIdMerch(merchant_id);
-        this.props.fetchIdMerchProd(merchant_id);
-        const product= [];
-        this.setState({
-            product: product.array
-        })
-    }
-
+ 
     mapProduct(){
         const productImg = "http://localhost:5000/";
-        console.log("product items", this.props.mproduct);
+        console.log("product items", this.props.merchPat);
         
-        return this.props.merchprod.map(product => (
+        return this.props.merchPat.map(product => (
             product.map(product => (
             <div key={product._id}>
                 <Container className='products'>
@@ -160,7 +146,8 @@ class PatMerchProfile extends Component {
 
 
 const mapStateToProps = state => ({
-    merchprod: state.merchprod.items
+    merchprod: state.merchprod.items,
+    merchPat: state.merchPat.items
 });
 
 export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch }) (PatMerchProfile);

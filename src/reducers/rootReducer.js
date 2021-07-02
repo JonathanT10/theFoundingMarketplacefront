@@ -10,6 +10,8 @@ import merchProdreducer from './merchProdreducer';
 import reqReducer from './reqReducer';
 import adminReducer from './adminReducer';
 import pastReducer from './pastReducer';
+import merchPatReducer from './merchPatReducer';
+
 
 
 export default combineReducers({
@@ -24,4 +26,5 @@ export default combineReducers({
     req: reqReducer,
     admin: adminReducer,
     pastOrder: pastReducer,
+    merchPat: merchPatReducer,
 });

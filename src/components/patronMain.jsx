@@ -15,6 +15,7 @@ import { Map, GoogleApiWrapper } from 'google-maps-react';
 import '../css/googleMaps.css';
 import Maps from './googleMaps';
 import { commentProd } from '../actions/productActions';
+import { fetchIdMerchPat } from '../actions/merchIdActions';
 
 
 
@@ -71,6 +72,7 @@ class PatronMain extends Component {
                 <p className="product">{product.description}</p>
                 <p className="address">Manufacturer's Address:</p>
                 <p className="address">{product.merchName}</p>
+                <Button  value={product.merchantId} onClick={(event) => this.handleMerch(event)}></Button>
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
                 <Button className="button" value={product.lat, product.lng}
@@ -127,6 +129,11 @@ class PatronMain extends Component {
 
     }
 
+    handleMerch = event => {
+        this.props.fetchIdMerchPat(event.currentTarget.value);
+        window.location = '/patronmerch'
+    }
+
 
     logOut = () => {
         localStorage.removeItem('token');
@@ -160,7 +167,8 @@ class PatronMain extends Component {
 
 
 const mapStateToProps = state => ({
-    product: state.product.items
+    product: state.product.items,
+    merchPat: state.merchPat.items
 });
 
-export default  connect(mapStateToProps, { fetchProduct, addCart, commentProd }) (PatronMain);
+export default  connect(mapStateToProps, { fetchProduct, addCart, commentProd, fetchIdMerchPat }) (PatronMain);

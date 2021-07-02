@@ -19,6 +19,7 @@ import Cart from './components/cart';
 import ReqHigh from './components/reqHigh';
 import AdminMain from './components/adminMain';
 import PastOrders from './components/pastOrders';
+import PatMerchProfile from './components/patronMerch'
 
 
 function App() {
@@ -43,6 +44,7 @@ return(
       <Route exact path="/reqhigh" component={ReqHigh} />
       <Route exact path="/adminmain" component={AdminMain} />
       <Route exact path="/pastorders" component={PastOrders} />
+      <Route exact path="/patronmerch" component={PatMerchProfile} />
     </Switch>
     </BrowserRouter>
   </div>

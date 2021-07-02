@@ -1,4 +1,4 @@
-import {  NEW_REGISTRATION } from '../actions/types';
+import {  FETCH_MERCHPAT } from '../actions/types';
 
 const initialState = {
     items: []
@@ -7,7 +7,7 @@ const initialState = {
 
 export default function(state = initialState, action){
     switch(action.type){ 
-        case NEW_REGISTRATION:
+        case FETCH_MERCHPAT:
             return {
                 ...state,
                 items: [action.payload, ...state.items]
