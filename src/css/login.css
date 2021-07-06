@@ -72,4 +72,10 @@ h2{
      display: block;
      margin-left: auto;
      margin-right: auto;
+     opacity: 11%;
+     background-color: #E5E5E5;
+ }
+
+ .mainT{
+    background-color: #E5E5E5;
  }

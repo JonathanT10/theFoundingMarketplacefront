@@ -61,7 +61,7 @@ class Login extends Component{
 
  render() {
     return(
-        <div >
+        <div className="mainT" >
         <Container className="main" >
             <p className ="merchantLog" onClick={() => this.merchantLog()}>Merchant Login</p>
             <Col className="head">
@@ -96,8 +96,9 @@ class Login extends Component{
                 </Row>
             </Table>
             </Col>
+         
         </Container>
-        {/* <img class ="center" src = {flag} height="500" width="85%"></img> */}
+        <img class ="center" src = {flag} height="500" width="97%"></img>
         </div>
     )
 }

@@ -159,6 +159,7 @@ class PatronMain extends Component {
                 {this.mapProduct()}
                 </Container>
             </div>
+            
         )
     }
 
