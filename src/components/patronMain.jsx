@@ -16,6 +16,7 @@ import '../css/googleMaps.css';
 import Maps from './googleMaps';
 import { commentProd } from '../actions/productActions';
 import { fetchIdMerchPat } from '../actions/merchIdActions';
+import PatMerchProfile from '../components/patronMerch';
 
 
 
@@ -63,7 +64,7 @@ class PatronMain extends Component {
                     
                     <div className='rowp'>
                     <div className='colp'>
-                    <img src={productImg+product.img}></img>
+                    <img className="prodPic" src={productImg+product.img}></img>
                     </div>
                     <div class='col'>
                     
@@ -131,6 +132,7 @@ class PatronMain extends Component {
 
     handleMerch = event => {
         this.props.fetchIdMerchPat(event.currentTarget.value);
+        
         window.location = '/patronmerch'
     }
 

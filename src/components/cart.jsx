@@ -40,7 +40,7 @@ class Cart extends Component {
             cart.map(product => (
             <div key={product.id}>
                 <Container className='products'>
-                    <img src={productImg+product.img}></img>
+                    <img className="prodPic" src={productImg+product.img}></img>
                     <div class='col'>
                         <Table>  
                         <p className="product">{product.name}</p>

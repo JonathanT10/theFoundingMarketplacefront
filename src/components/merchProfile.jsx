@@ -56,7 +56,7 @@ class MerchProfile extends Component {
                 <Container className='products'>
                     <div clas='row'>
                     <div class='col'>
-                    <img src={productImg+product.img}></img>
+                    <img className="prodPic" src={productImg+product.img}></img>
                     </div>
                     <div class='col'>
                 <Table>  
