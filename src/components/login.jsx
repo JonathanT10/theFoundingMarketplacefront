@@ -98,7 +98,7 @@ class Login extends Component{
             </Col>
          
         </Container>
-        <img class ="center" src = {flag} height="500" width="97%"></img>
+        <img class ="center" src = {flag} height="500" width="99%"></img>
         </div>
     )
 }

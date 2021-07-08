@@ -3,6 +3,7 @@
     height: 100%;
     position: relative;
     background-color: #14213D;
+    opacity: 95%;
 }
 
 .merchantLog{
@@ -53,6 +54,7 @@ h2{
     background-color: #14213D;
     text-align: center;
     justify-content:center;
+    opacity: 95%;
 }
 
 .flog{
