@@ -57,7 +57,7 @@ class PatronMain extends Component {
 
     mapProduct(){
         const productImg = "http://localhost:5000/";
-        console.log("product items", this.props.product);
+        // console.log("product items", this.props.product);
         return this.props.product.map(product => (
             <div key={product.id}>
                 <Container className='products'>
@@ -132,7 +132,13 @@ class PatronMain extends Component {
 
     handleMerch = event => {
         this.props.fetchIdMerchPat(event.currentTarget.value);
-        
+        return this.props.merchPat.map(merchPat => (
+            <div key={merchPat.id}>
+                <p>{merchPat.name}</p>
+                {window.location = '/patronmerch'}
+            </div>
+        ) );
+        console.log("Merchant Profile", this.props.merchPat)
         window.location = '/patronmerch'
     }
 

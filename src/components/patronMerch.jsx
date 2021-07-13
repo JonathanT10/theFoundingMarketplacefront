@@ -120,8 +120,8 @@ class PatMerchProfile extends Component {
         window.location = '/';
     };
 
-    merchMain = () => {
-        window.location = '/merchantmain';
+    patmain = () => {
+        window.location = '/patronMain';
     };
 
 
@@ -129,7 +129,7 @@ class PatMerchProfile extends Component {
         return(
             <div className="main">
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
-                <p className="logOut" onClick={() => this.merchMain()}>Back</p>
+                <p className="logOut" onClick={() => this.patmain()}>Back</p>
                 <Container>
                 <h1 className="merchHead">Merchant Profile</h1>
                 {/* <h2>{this.props.merchant.about}</h2>
