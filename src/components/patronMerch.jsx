@@ -72,6 +72,18 @@ class PatMerchProfile extends Component {
         ))));
     }
 
+    mapUser(){
+        return this.props.user.map(merchant => (
+            <div key={merchant.id}>
+                <Container>
+                    <p className="merchName">{merchant.name}</p>
+                    <p>{merchant.hqAddress}</p>
+                    <p>{merchant.about}</p>
+                </Container>
+            </div>
+        ));
+    }
+
     logOut = () => {
         localStorage.removeItem('token');
         window.location = '/';
@@ -90,8 +102,7 @@ class PatMerchProfile extends Component {
                 <p className="logOut" onClick={() => this.patmain()}>Back</p>
                 <Container>
                 <h1 className="merchHead">Merchant Profile</h1>
-                {/* <h2>{this.props.merchant.about}</h2>
-                <p>{this.props.merchant.hqAddress}</p> */}
+                <p className="merchAbout">{this.mapUser()}</p> 
                 {this.mapProduct()}
                 </Container>
             </div>
@@ -107,7 +118,8 @@ const mapStateToProps = state => ({
     merchprod: state.merchprod.items,
     merchPat: state.merchPat.items,
     product: state.product.items,
-    merchprod: state.merchprod.items
+    merchprod: state.merchprod.items,
+    user: state.user.items
 });
 
 export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch }) (PatMerchProfile);
