@@ -131,15 +131,9 @@ class PatronMain extends Component {
     }
 
     handleMerch = event => {
-        this.props.fetchIdMerchPat(event.currentTarget.value);
-        return this.props.merchPat.map(merchPat => (
-            <div key={merchPat.id}>
-                <p>{merchPat.name}</p>
-                {window.location = '/patronmerch'}
-            </div>
-        ) );
-        console.log("Merchant Profile", this.props.merchPat)
-        window.location = '/patronmerch'
+        localStorage.setItem('merchant_id', event.currentTarget.value);
+       
+        {window.location = '/patronmerch'}
     }
 
 

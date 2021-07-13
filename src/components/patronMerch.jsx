@@ -29,12 +29,27 @@ class PatMerchProfile extends Component {
     }
 
 
+    componentDidMount(){
+        const jwt = localStorage.getItem('merchant_id');
+        const merchant_id = jwt
+        this.setState({
+            merchant_id: merchant_id
+        })
+        this.props.fetchIdMerch(merchant_id);
+        this.props.fetchIdMerchProd(merchant_id);
+        const product= [];
+        this.setState({
+            product: product.array
+        })
+    }
+
  
     mapProduct(){
         const productImg = "http://localhost:5000/";
-        console.log("product items", this.props.merchPat);
+        console.log('products', this.props.product)
+        console.log("merchant product items", this.props.merchprod);
         
-        return this.props.merchPat.map(product => (
+        return this.props.merchprod.map(product => (
             product.map(product => (
             <div key={product._id}>
                 <Container className='products'>
@@ -49,27 +64,6 @@ class PatMerchProfile extends Component {
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
                 <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
-                   
-                <Col>
-                <form onSubmit={this.handleSubmission} encType='multipart/form-data'>
-                    <input type="file" name="img" onChange={this.imgChange} />
-                    {this.isSelected ? ( 
-                        <div className="loginText">
-                            <p>Filename: {this.selectedFile.name}</p>
-                            <p>Filetype: {this.selectedFile.type}</p>
-                            <p>Size in bytes: {this.selectedFile.size}</p>
-                        </div>
-                    ) : (
-                    <p className="loginText">Select a file to show details</p>
-                    )}
-                    <div className="loginText">
-                    <button value={product._id} className="btn btn-success btn-md"  onClick={(event) => 
-                    this.handleSubmission(event)}>Submit</button>
-                    </div>  
-                </form> 
-                <Button value={product.id} className="button" onClick={(event) =>
-                 window.location = "/productimg"}>Upload Image</Button>
-                </Col>
                 </Table>
                 </div>
                 </div>
@@ -78,49 +72,13 @@ class PatMerchProfile extends Component {
         ))));
     }
 
-    imgChange = (event) => {
-        this.setState({
-            selectedFile: event.target.files[0]
-        });
-       console.log("image file", this.state.selectedFile)
-	};
-
-
-    handleSubmission = (event) => {
-        event.preventDefault();
-       
-        console.log('imgchange',this.state.selectedFile[0])
-        const formData = new FormData();
-        formData.append("img", this.state.selectedFile);
-
-
-        
-        var config = {
-            method: 'put',
-            url: `http://localhost:5000/api/product/uploadmulter/${event.currentTarget.value}`, 
-            data : formData,
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-        };
-
-        axios(config)
-        .then(function (response) {
-        console.log(JSON.stringify(response.data));
-        })
-        .catch(function (error) {
-        console.log(error);
-        });        
-        window.location = '/merchprofile';
-	};
-
-
     logOut = () => {
         localStorage.removeItem('token');
         window.location = '/';
     };
 
     patmain = () => {
+        localStorage.removeItem('merchant_id')
         window.location = '/patronMain';
     };
 
@@ -147,7 +105,9 @@ class PatMerchProfile extends Component {
 
 const mapStateToProps = state => ({
     merchprod: state.merchprod.items,
-    merchPat: state.merchPat.items
+    merchPat: state.merchPat.items,
+    product: state.product.items,
+    merchprod: state.merchprod.items
 });
 
 export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch }) (PatMerchProfile);
