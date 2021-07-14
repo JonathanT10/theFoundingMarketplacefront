@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import '../css/googleMaps.css';
-import Row from 'react-bootstrap/Row';
-import PatronMain from './patronMain'
+
 
 
 
 export class Maps extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+        lat: '',
+        lng: ''
+    };
+}
+
+
+  componentDidMount(){
+    const lat = localStorage.getItem('lat')
+    const lng = localStorage.getItem('lng')
+    this.setState({
+      lat: lat,
+      lng: lng
+    })
+  }
 
     logOut = () => {
         localStorage.removeItem('token');
@@ -14,6 +30,8 @@ export class Maps extends React.Component {
     };
 
     back = () => {
+        localStorage.removeItem('lat')
+        localStorage.removeItem('lng')
         window.location = '/patronmain';
     };
 
@@ -30,23 +48,13 @@ export class Maps extends React.Component {
          
                 <Map
                 google={this.props.google}
-                zoom={9}
+                zoom={5}
                 style={mapStyles}
-                initialCenter={{lat: 32.74166491698227, lng: -96.2855366309602}}
+                initialCenter={{lat: this.state.lat, lng: this.state.lng}}
                 >
-                    <Marker 
+                   <Marker 
                     label='American Made'
-                    postion={{ lat: 32.74166491698227, lng: -96.2855366309602 }} 
-                    />
-                    <Marker
-                    label='Fine Leather Goods'
-                    position={{   lat: 32.8636206,
-                    lng: -96.68051989999999 }}
-                    />
-                    <Marker
-                    label='USA Knives'
-                    position={{   lat: 32.2133162,
-                    lng: -95.8354492 }}
+                    postion={{ lat: this.state.lat, lng: this.state.lng }} 
                     />
                 </Map>
         </div>

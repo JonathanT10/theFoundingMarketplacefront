@@ -66,9 +66,9 @@ class PatronMain extends Component {
                     <div className='colp'>
                     <img className="prodPic" src={productImg+product.img}></img>
                     </div>
-                    <div class='col'>
+                    <div className='col'>
                     
-                <Table>  
+                 
                 <p className="product">{product.name}</p>
                 <p className="product">{product.description}</p>
                 <p className="address">Manufacturer's Address:</p>
@@ -77,8 +77,8 @@ class PatronMain extends Component {
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
                 <Button className="button" value={product.lat, product.lng}
-                onClick={(event) => this.handleGoogle(event)}>Google Map</Button>
-                   
+                onClick={(event) => this.handleGoogle(product.lat, product.lng)}>Google Map</Button>
+                
                 <Col>
                 <Button value={product._id} className="button" 
                 onClick={(event) => 
@@ -88,7 +88,7 @@ class PatronMain extends Component {
                     <p className="comment">{product.comment}</p>
                     </Col>
                 </Col>
-                </Table>
+                
                 </div>
                 <Form >
                     <Form.Group controlId="formComments">
@@ -135,8 +135,9 @@ class PatronMain extends Component {
         {window.location = '/patronmerch'}
     }
 
-    handleGoogle = event => {
-        localStorage.setItem('location', event.currentTarget.value)
+    handleGoogle(plat, plng){
+        localStorage.setItem('lat', plat)
+        localStorage.setItem('lng', plng)
         {window.location = '/googlemaps'}
     }
 
