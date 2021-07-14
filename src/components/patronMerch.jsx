@@ -12,6 +12,7 @@ import Col from "react-bootstrap/Col";
 import jwtDecode from 'jwt-decode';
 import { fetchIdMerch } from '../actions/userActions';
 import { fetchIdMerchProd } from '../actions/productActions';
+import { addCart } from '../actions/userActions';
 import axios from 'axios';
 
 
@@ -55,7 +56,7 @@ class PatMerchProfile extends Component {
                 <Container className='products'>
                     <div clas='row'>
                     <div class='col'>
-                    <img src={productImg+product.img}></img>
+                    <img className="prodPic" src={productImg+product.img}></img>
                     </div>
                     <div class='col'>
                 <Table>  
@@ -64,6 +65,11 @@ class PatMerchProfile extends Component {
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
                 <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
+                <Col>
+                <Button value={product._id} className="button" 
+                onClick={(event) => 
+                    this.handleClick(event)}>Add to cart</Button>
+                </Col>
                 </Table>
                 </div>
                 </div>
@@ -82,6 +88,14 @@ class PatMerchProfile extends Component {
                 </Container>
             </div>
         ));
+    }
+
+    handleClick= event => {
+        const jwt = localStorage.getItem('token');
+    const userObject = jwtDecode(jwt);
+    const patron_id = userObject._id;
+        this.props.addCart(patron_id, event.currentTarget.value)
+        window.location = "/cart";
     }
 
     logOut = () => {
@@ -122,4 +136,4 @@ const mapStateToProps = state => ({
     user: state.user.items
 });
 
-export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch }) (PatMerchProfile);
+export default connect(mapStateToProps, { fetchIdMerchProd, fetchIdMerch, addCart }) (PatMerchProfile);

@@ -77,7 +77,7 @@ class PatronMain extends Component {
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
                 <Button className="button" value={product.lat, product.lng}
-                onClick={(event) => window.location='/googlemaps'}>Google Map</Button>
+                onClick={(event) => this.handleGoogle(event)}>Google Map</Button>
                    
                 <Col>
                 <Button value={product._id} className="button" 
@@ -132,8 +132,12 @@ class PatronMain extends Component {
 
     handleMerch = event => {
         localStorage.setItem('merchant_id', event.currentTarget.value);
-       
         {window.location = '/patronmerch'}
+    }
+
+    handleGoogle = event => {
+        localStorage.setItem('location', event.currentTarget.value)
+        {window.location = '/googlemaps'}
     }
 
 
