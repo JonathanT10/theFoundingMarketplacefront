@@ -127,7 +127,7 @@ class PatronMain extends Component {
     handleComment= event => {
 
     this.props.commentProd(this.state.comment, event.currentTarget.value);
-
+    window.location = '/patronmain'
     }
 
     handleMerch = event => {

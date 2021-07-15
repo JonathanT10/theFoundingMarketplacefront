@@ -41,12 +41,12 @@ export class Maps extends React.Component {
         height: "60%",
       };
       return (
-          <div>
+          <div className="mainPage">
                 
                     <p className="lOut" onClick={() => this.logOut()}>Logout</p>
                     <p className="lOut" onClick={() => this.back()}>Back</p>
          
-                <Map
+                <Map className="mainMap"
                 google={this.props.google}
                 zoom={5}
                 style={mapStyles}

@@ -27,11 +27,11 @@
   }
 
   .lOut{
-    padding-right: 90%;
+    margin-left: 5%;
      font-size: smaller;
      padding-bottom: 0px;
      cursor: pointer;
-     color: #14213D;
+     color: #E5E5E5;
   }
 
   
@@ -43,6 +43,7 @@
     .map-h2 {
       font-size: 1.3rem;
       font-weight: 400;
+  
     }
   
     .pin {
@@ -52,4 +53,14 @@
     .pin-icon {
       font-size: 10vw;
     }
+  }
+
+  .mainMap{
+    padding-left: 15%;
+    background-color: #E5E5E5;
+  }
+
+  .mainPage{
+    background-color: #14213D;
+    
   }
