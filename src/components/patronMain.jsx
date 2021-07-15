@@ -152,12 +152,17 @@ class PatronMain extends Component {
         window.location = '/cart';
     };
 
+    past = () => {
+        window.location = '/pastorders';
+    };
+
 
     render(){
         return(
             <div className='mainp'>
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
                 <p className="logOut" onClick={() => this.cart()}>Cart</p>
+                <p className="logOut" onClick={() => this.past()}>Order History</p>
                 <Container>
                 <Col className='heading'>
                 <h1 >Welcome to main product page</h1>
