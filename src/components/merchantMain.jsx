@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col';
 import { editAbout } from '../actions/editAction';
 import jwtDecode from 'jwt-decode';
 import '../css/merchantMain.css'
+import franklin from '../images/Franklin.jpg'
 
 class MerchantMain extends Component {
     constructor(props){
@@ -103,7 +104,9 @@ class MerchantMain extends Component {
                         </Col>
                     </Table>
                 </Container>
+                <img class ="centerF" src = {franklin} height="380" width="67%"></img>
             </div>
+            
         )
     }
 

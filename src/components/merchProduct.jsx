@@ -12,6 +12,7 @@ import '../css/merchProduct.css';
 
 
 
+
 class MerchantProd extends Component {
     constructor(props){
         super(props);
@@ -131,6 +132,7 @@ this.setState({
                     </Row>
                 </Table>
             </Container>
+            
             </div>
         )
 
