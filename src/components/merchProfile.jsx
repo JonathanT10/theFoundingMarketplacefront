@@ -13,6 +13,7 @@ import jwtDecode from 'jwt-decode';
 import { fetchIdMerch } from '../actions/userActions';
 import { fetchIdMerchProd } from '../actions/productActions';
 import axios from 'axios';
+import MadeInUS from '../images/MadeInUS.jpg'
 
 
 class MerchProfile extends Component {
@@ -95,6 +96,8 @@ class MerchProfile extends Component {
         ))));
     }
 
+  
+
     mapUser(){
         return this.props.user.map(merchant => (
             <div key={merchant.id}>
@@ -102,11 +105,20 @@ class MerchProfile extends Component {
                     <p className="merchName">{merchant.name}</p>
                     <p>{merchant.hqAddress}</p>
                     <p>{merchant.about}</p>
+                    <p>{this.highLightUS()}</p>
                 </Container>
             </div>
         ));
     }
 
+    highLightUS(){
+        if(this.props.user[0].inCountry = true){
+            return(
+        <img class ="centerUS" src = {MadeInUS} height="30" width="10%"></img>)
+        }else{
+            console.log("no highlight")
+        }
+    }
     
     imgChange = (event) => {
         this.setState({

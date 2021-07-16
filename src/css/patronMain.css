@@ -143,4 +143,10 @@
       border-style:outset;
   }
 
-  
+  .centerUS{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 90%;
+    background-color: #E5E5E5;
+}
