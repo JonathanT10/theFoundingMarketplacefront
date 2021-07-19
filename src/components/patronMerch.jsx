@@ -101,6 +101,33 @@ class PatMerchProfile extends Component {
         }
     }
 
+    highLightVet(){
+        if(this.props.user[0].veteran === true){
+            return(
+        <img class ="centerUS" src = {MadeInUS} height="30" width="10%"></img>)
+        }else{
+            console.log("no  vet highlight")
+        }
+    }
+
+    highLightFire(){
+        if(this.props.user[0].fire === true){
+            return(
+        <img class ="centerUS" src = {MadeInUS} height="30" width="10%"></img>)
+        }else{
+            console.log("no fire highlight")
+        }
+    }
+
+    highLightPolice(){
+        if(this.props.user[0].police === true){
+            return(
+        <img class ="centerUS" src = {MadeInUS} height="30" width="10%"></img>)
+        }else{
+            console.log("no  police highlight")
+        }
+    }
+
     handleClick= event => {
         const jwt = localStorage.getItem('token');
     const userObject = jwtDecode(jwt);
