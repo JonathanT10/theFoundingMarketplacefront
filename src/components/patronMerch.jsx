@@ -93,7 +93,7 @@ class PatMerchProfile extends Component {
     }
 
     highLightUS(){
-        if(this.props.user[0].inCountry = true){
+        if(this.props.user[0].inCountry === true){
             return(
         <img class ="centerUS" src = {MadeInUS} height="30" width="10%"></img>)
         }else{

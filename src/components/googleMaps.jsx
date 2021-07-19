@@ -48,9 +48,10 @@ export class Maps extends React.Component {
          
                 <Map className="mainMap"
                 google={this.props.google}
-                zoom={5}
+                zoom={10}
                 style={mapStyles}
-                initialCenter={{lat: this.state.lat, lng: this.state.lng}}
+                // initialCenter={{lat: 32, lng: -96}}
+                Center={{lat: this.state.lat, lng: this.state.lng}}
                 >
                    <Marker 
                     label='American Made'
