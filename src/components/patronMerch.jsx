@@ -84,7 +84,7 @@ class PatMerchProfile extends Component {
     mapUser(){
         return this.props.user.map(merchant => (
             <div key={merchant.id}>
-                <Container>
+                <Container className="merchProf">
                     <p className="merchName">{merchant.name}</p>
                     <p>{merchant.hqAddress}</p>
                     <p>{merchant.about}</p>
@@ -109,7 +109,7 @@ class PatMerchProfile extends Component {
     highLightVet(){
         if(this.props.user[0].veteran === true){
             return(
-        <img class ="centerUS" src = {VOB} height="30" width="10%"></img>)
+        <img class ="centerUS" src = {VOB} height="38" width="6%"></img>)
         }else{
             console.log("no  vet highlight")
         }

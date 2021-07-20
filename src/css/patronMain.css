@@ -12,8 +12,9 @@
 
 .merchAbout{
   background-color: #E5E5E5 ;
-  margin-bottom: 1%;
+  margin-bottom: 7%;
   margin-top: 1%;
+  padding-bottom: 1%;
   opacity: 95%;
   text-align: center;
 
@@ -150,3 +151,4 @@
     opacity: 90%;
     background-color: #E5E5E5;
 }
+
