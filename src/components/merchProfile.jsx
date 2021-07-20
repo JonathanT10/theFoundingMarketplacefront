@@ -14,6 +14,8 @@ import { fetchIdMerch } from '../actions/userActions';
 import { fetchIdMerchProd } from '../actions/productActions';
 import axios from 'axios';
 import MadeInUS from '../images/MadeInUS.jpg'
+import VOB from '../images/VOB.jpg'
+import Fire from '../images/Fire.jpg'
 
 
 class MerchProfile extends Component {
@@ -106,6 +108,9 @@ class MerchProfile extends Component {
                     <p>{merchant.hqAddress}</p>
                     <p>{merchant.about}</p>
                     <p>{this.highLightUS()}</p>
+                    <p>{this.highLightVet()}</p>
+                    <p>{this.highLightFire()}</p>
+                    {/* <p>{this.highLightPolice()}</p> */}
                 </Container>
             </div>
         ));
@@ -123,7 +128,7 @@ class MerchProfile extends Component {
     highLightVet(){
         if(this.props.user[0].veteran === true){
             return(
-        <img class ="centerUS" src = {MadeInUS} height="30" width="10%"></img>)
+        <img class ="centerUS" src = {VOB} height="30" width="10%"></img>)
         }else{
             console.log("no  vet highlight")
         }
@@ -132,7 +137,7 @@ class MerchProfile extends Component {
     highLightFire(){
         if(this.props.user[0].fire === true){
             return(
-        <img class ="centerUS" src = {MadeInUS} height="30" width="10%"></img>)
+        <img class ="centerUS" src = {Fire} height="30" width="10%"></img>)
         }else{
             console.log("no fire highlight")
         }
