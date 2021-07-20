@@ -71,9 +71,9 @@ class PatronMain extends Component {
                  
                 <p className="product">{product.name}</p>
                 <p className="product">{product.description}</p>
-                <p className="address">Manufacturer's Address:</p>
-                <p className="address">{product.merchName}</p>
                 <button className="addressprof" value={product.merchantId} onClick={(event) => this.handleMerch(event)}>View Merchant Profile</button>
+                <p className="address">{product.merchName}</p>
+                <p className="address">Manufacturer's Address:</p>
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
                 <Button className="button" value={product.lat, product.lng}
