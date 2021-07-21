@@ -21,6 +21,7 @@ class Cart extends Component {
         this.state = {
            patron: {},
            pastOrders: [],
+           total: '',
            
         }
     }
@@ -35,6 +36,7 @@ class Cart extends Component {
 
     mapProductCart(){
         const productImg = "http://localhost:5000/";
+        const total = 0;
         console.log("product items", this.props.patron);
         return this.props.patron.map(cart => (
             cart.map(product => (
