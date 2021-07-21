@@ -69,8 +69,8 @@ class MerchProfile extends Component {
                 <p className="product">{product.price}</p>
                 <p className="commentHead">Comments:</p>
                 <p className="comment">{product.comment}</p>
-                <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
-                   
+                <Button className="button" value={product.lat, product.lng}
+                onClick={(event) => this.handleGoogle(product.lat, product.lng)}>Google Map</Button>
                 <Col>
                 <form onSubmit={this.handleSubmission} encType='multipart/form-data'>
                     <input type="file" name="img" onChange={this.imgChange} />
@@ -114,6 +114,12 @@ class MerchProfile extends Component {
                 </Container>
             </div>
         ));
+    }
+
+    handleGoogle(plat, plng){
+        localStorage.setItem('lat', plat)
+        localStorage.setItem('lng', plng)
+        {window.location = '/googlemaps'}
     }
 
     highLightUS(){

@@ -67,7 +67,8 @@ class PatMerchProfile extends Component {
                 <p className="product">{product.description}</p>
                 <p className="product">{product.addressMade}</p>
                 <p className="product">{product.price}</p>
-                <Button className="button" onClick={() => window.location = '/googlemaps'}>Google Map</Button>
+                <Button className="button" value={product.lat, product.lng}
+                onClick={(event) => this.handleGoogle(product.lat, product.lng)}>Google Map</Button>
                 <Col>
                 <Button value={product._id} className="button" 
                 onClick={(event) => 
@@ -95,6 +96,12 @@ class PatMerchProfile extends Component {
                 </Container>
             </div>
         ));
+    }
+
+    handleGoogle(plat, plng){
+        localStorage.setItem('lat', plat)
+        localStorage.setItem('lng', plng)
+        {window.location = '/googlemaps'}
     }
 
     highLightUS(){

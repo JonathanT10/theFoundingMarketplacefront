@@ -155,3 +155,11 @@
     background-color: #E5E5E5;
 }
 
+.centerWash{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #E5E5E5;
+  border-style:double;
+}
+

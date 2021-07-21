@@ -16,7 +16,7 @@ import '../css/googleMaps.css';
 import Maps from './googleMaps';
 import { commentProd } from '../actions/productActions';
 import { fetchIdMerchPat } from '../actions/merchIdActions';
-import PatMerchProfile from '../components/patronMerch';
+import washington from '../images/washington.jpg'
 
 
 
@@ -167,6 +167,7 @@ class PatronMain extends Component {
                 <Col className='heading'>
                 <h1 >Welcome to main product page</h1>
                 <p className="subp">A place for free trade, with a prioity on products made in USA.</p>
+                <img class ="centerWash" src = {washington} height="150" width="30%"></img>
                 </Col>
                 {this.mapProduct()}
                 </Container>
