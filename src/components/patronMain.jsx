@@ -160,9 +160,11 @@ class PatronMain extends Component {
     render(){
         return(
             <div className='mainp'>
+                <Col>
                 <p className="logOut" onClick={() => this.logOut()}>Logout</p>
                 <p className="logOut" onClick={() => this.cart()}>Cart</p>
                 <p className="logOut" onClick={() => this.past()}>Order History</p>
+                </Col>
                 <Container>
                 <Col className='heading'>
                 <h1 >Welcome to main product page</h1>

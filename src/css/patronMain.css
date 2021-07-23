@@ -31,6 +31,7 @@
 
 .logOut{
     margin-left: 5%;
+    margin-right: 90%;
      font-size: smaller;
      padding-bottom: 0px;
      cursor: pointer;
@@ -93,6 +94,7 @@
     font-style:italic;
     cursor: pointer;
     border-style: none;
+    
   
   }
 
