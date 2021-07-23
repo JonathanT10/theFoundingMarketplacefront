@@ -87,6 +87,19 @@ class ReqHigh extends Component {
                                 </Button>
                             </Form>
                         </Row>
+                        <Row>
+                        <Form>
+                                <Form.Group>
+                                    <Form.Label>Veteran Owned Highlight</Form.Label>
+                                    <Form.Control type="about" placeholder="Veteran Owned USA"onChange={this.onRequestChange}/>
+                                    <Form.Text>
+                                    </Form.Text>
+                                </Form.Group>
+                                <Button className="buttonm"  variant="primary" type="submit" onClick={(event) => this.handleClick(event)}>
+                                    Submit
+                                </Button>
+                            </Form>
+                            </Row>
                         </Col>
                     </Table>
                 </Container>
