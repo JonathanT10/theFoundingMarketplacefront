@@ -14,6 +14,7 @@ import { statusHighUS } from '../actions/adminAction';
 import { Collection } from 'mongoose';
 import { emptyRequest } from '../actions/adminAction';
 import { statusVet } from '../actions/adminAction';
+import { statusFire } from '../actions/adminAction';
 
 class AdminMain extends Component {
     constructor(props){
@@ -44,6 +45,10 @@ approveVet(event){
     this.props.statusVet(event.currentTarget.value)
 }
 
+approveFire(event){
+    this.props.statusFire(event.currentTarget.value)
+}
+
 emptyReq(){
     const jwt =localStorage.getItem('token');
         const adminObject = jwtDecode(jwt);
@@ -69,6 +74,8 @@ emptyReq(){
                         onClick={(event) => this.approveHighUS(event)}>Approve Made in USA Status</Button>
                         <Button value={admin.merchantId}
                         onClick={(event) => this.approveVet(event)}>Approve Veteran Status</Button>
+                        <Button value={admin.merchantId}
+                        onClick={(event) => this.approveFire(event)}>Approve Fire Status</Button>
                         <Button className="clearCart"  
                         value={admin._id} onClick={(event) => this.delHighUS(event)}>Deny</Button>
                         </Row>
@@ -132,4 +139,4 @@ const mapStateToProps = state => ({
 
 
 
-export default connect(mapStateToProps, { fetchAdminUS, deleteHighUS, statusHighUS, emptyRequest, statusVet }) (AdminMain);
+export default connect(mapStateToProps, { fetchAdminUS, deleteHighUS, statusHighUS, emptyRequest, statusVet, statusFire }) (AdminMain);

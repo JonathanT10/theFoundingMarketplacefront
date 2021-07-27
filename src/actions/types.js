@@ -27,5 +27,6 @@ export const DELETE_HIGHUS = 'DELETE_HIGHUS';
 export const STATUS_HIGHUS = 'STATUS_HIGHUS';
 export const EMPTY_REQUEST = 'EMPTY_REQUEST';
 export const STATUS_VET = 'STATUS_VET';
+export const STATUS_FIRE = 'STATUS_FIRE';
 
 export const FETCH_MERCHPAT = 'FETCH_MERCHPAT';

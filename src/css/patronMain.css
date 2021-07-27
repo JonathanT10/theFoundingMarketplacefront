@@ -1,6 +1,7 @@
 .mainp{
     background-color: #14213D;
     opacity: 95%;
+    
 }
 
 .merchHead{
@@ -61,6 +62,7 @@
       border-width: 5px;
       margin-bottom: 5%;
       text-align: center;
+   
   }
 
   .product{
@@ -164,4 +166,5 @@
   background-color: #E5E5E5;
   border-style:double;
 }
+
 
