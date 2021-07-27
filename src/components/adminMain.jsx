@@ -13,6 +13,7 @@ import { deleteHighUS  } from '../actions/adminAction';
 import { statusHighUS } from '../actions/adminAction';
 import { Collection } from 'mongoose';
 import { emptyRequest } from '../actions/adminAction';
+import { statusVet } from '../actions/adminAction';
 
 class AdminMain extends Component {
     constructor(props){
@@ -39,6 +40,10 @@ approveHighUS(event){
     this.props.statusHighUS(event.currentTarget.value)
 }
 
+approveVet(event){
+    this.props.statusVet(event.currentTarget.value)
+}
+
 emptyReq(){
     const jwt =localStorage.getItem('token');
         const adminObject = jwtDecode(jwt);
@@ -47,8 +52,6 @@ emptyReq(){
 }
         
             mapHighUS(){
-                console.log("Highlight request Made in US items", this.props.req);
-                
                 return this.props.admin.map(admin => (
                    admin.map(admin =>
                     admin.map(admin =>
@@ -62,8 +65,12 @@ emptyReq(){
                         
                         </Row>
                         <Row>
-                        <Button value={admin.merchantId} onClick={(event) => this.approveHighUS(event)}>Approve</Button>
-                        <Button className="clearCart"  value={admin._id} onClick={(event) => this.delHighUS(event)}>Deny</Button>
+                        <Button value={admin.merchantId} 
+                        onClick={(event) => this.approveHighUS(event)}>Approve Made in USA Status</Button>
+                        <Button value={admin.merchantId}
+                        onClick={(event) => this.approveVet(event)}>Approve Veteran Status</Button>
+                        <Button className="clearCart"  
+                        value={admin._id} onClick={(event) => this.delHighUS(event)}>Deny</Button>
                         </Row>
                         
                         </Col>
@@ -101,7 +108,7 @@ emptyReq(){
                         <Row>
                             <h1 className="headmain">Admin Tasks</h1>
                         </Row>
-                        <h3 className="adminbody">Made in US requests</h3>
+                        <h3 className="adminbody">Highlighted Status Request</h3>
                             <Col className="adminbody">
                             <Row>
                             {this.mapHighUS()}
@@ -125,4 +132,4 @@ const mapStateToProps = state => ({
 
 
 
-export default connect(mapStateToProps, { fetchAdminUS, deleteHighUS, statusHighUS, emptyRequest }) (AdminMain);
+export default connect(mapStateToProps, { fetchAdminUS, deleteHighUS, statusHighUS, emptyRequest, statusVet }) (AdminMain);

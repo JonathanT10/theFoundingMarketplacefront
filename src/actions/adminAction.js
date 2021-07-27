@@ -2,6 +2,7 @@ import { FETCH_ADMINUS } from './types';
 import { DELETE_HIGHUS } from './types';
 import { STATUS_HIGHUS } from './types';
 import { EMPTY_REQUEST} from './types';
+import { STATUS_VET } from './types';
 
 import axios from 'axios';
 
@@ -31,6 +32,21 @@ export const statusHighUS = (merchantId) => dispatch => {
     })
     .then(merchant => dispatch({
         type: STATUS_HIGHUS,
+        payload: merchant.data
+}))
+.catch(error => {
+    alert("Invalid request")
+    console.log('Error', error);
+});
+    
+}
+
+export const statusVet = (merchantId) => dispatch => {
+    axios.put(`http://localhost:5000/api/merchant/${merchantId}/vet`,{
+        veteran: true
+    })
+    .then(merchant => dispatch({
+        type: STATUS_VET,
         payload: merchant.data
 }))
 .catch(error => {
