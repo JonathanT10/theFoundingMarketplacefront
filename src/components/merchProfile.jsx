@@ -59,7 +59,7 @@ class MerchProfile extends Component {
                 <Container className='products'>
                     <div className='row'>
                     <div className='col'>
-                    <img className="prodPic" src={productImg+product.img}></img>
+                    <img className="prodPic" src={productImg+product.img} alt="The product being listed."></img>
                     </div>
                     <div className='col'>
                 <Table>  
@@ -125,7 +125,7 @@ class MerchProfile extends Component {
     highLightUS(){
         if(this.props.user[0].inCountry === true){
             return(
-        <img class ="centerUS" src = {MadeInUS} height="30" width="10%"></img>)
+        <img class ="centerUS" src = {MadeInUS} height="30" width="10%" alt="Made in the USA badge"></img>)
         }else{
             console.log("no highlight")
         }
@@ -134,7 +134,7 @@ class MerchProfile extends Component {
     highLightVet(){
         if(this.props.user[0].veteran === true){
             return(
-        <img class ="centerUS" src = {VOB} height="30" width="10%"></img>)
+        <img class ="centerUS" src = {VOB} height="30" width="10%" alt="Veteran Owned Business badge"></img>)
         }else{
             console.log("no  vet highlight")
         }
@@ -143,7 +143,7 @@ class MerchProfile extends Component {
     highLightFire(){
         if(this.props.user[0].fire === true){
             return(
-        <img class ="centerUS" src = {Fire} height="30" width="10%"></img>)
+        <img class ="centerUS" src = {Fire} height="30" width="10%" alt="Firefighter Owned Business badge"></img>)
         }else{
             console.log("no fire highlight")
         }
@@ -152,7 +152,7 @@ class MerchProfile extends Component {
     highLightPolice(){
         if(this.props.user[0].police === true){
             return(
-        <img class ="centerUS" src = {MadeInUS} height="30" width="10%"></img>)
+        <img class ="centerUS" src = {MadeInUS} height="30" width="10%" alt="Police Owned Business badge"></img>)
         }else{
             console.log("no  police highlight")
         }

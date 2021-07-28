@@ -61,7 +61,7 @@ class Cart extends Component {
         localStorage.setItem('lat', plat)
         localStorage.setItem('lng', plng)
         window.location = '/googlemaps'
-    
+
     }
 
     checkout = (event) => {

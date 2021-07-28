@@ -64,7 +64,7 @@ class PatronMain extends Component {
                     
                     <div className='rowp'>
                     <div className='colp'>
-                    <img className="prodPic" src={productImg+product.img}></img>
+                    <img className="prodPic" src={productImg+product.img} alt="Product that is being sold"></img>
                     </div>
                     <div className='col'>
                     
@@ -169,7 +169,7 @@ class PatronMain extends Component {
                 <Col className='heading'>
                 <h1 >Welcome to main product page</h1>
                 <p className="subp">A place for free trade, with a prioity on products made in USA.</p>
-                <img className ="centerWash" src = {washington} height="150" width="30%"></img>
+                <img className ="centerWash" src = {washington} height="150" width="30%" alt="George Washington crossing the Delaware"></img>
                 </Col>
                 {this.mapProduct()}
                 </Container>

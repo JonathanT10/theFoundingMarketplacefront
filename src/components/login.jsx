@@ -8,7 +8,6 @@ import Col from "react-bootstrap/Col";
 import '../css/login.css';
 import { connect } from 'react-redux';
 import { logIn } from '../actions/authActions';
-import { useCallback } from 'react';
 import flag from '../images/editflag.png'
 
 
@@ -98,7 +97,7 @@ class Login extends Component{
             </Col>
          
         </Container>
-        <img class ="center" src = {flag} height="500" width="99%"></img>
+        <img class ="center" src = {flag} height="500" width="99%" alt="The American Flag"></img>
         </div>
     )
 }
