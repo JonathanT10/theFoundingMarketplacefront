@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import jwtDecode from 'jwt-decode';
@@ -11,7 +10,6 @@ import '../css/merchantMain.css'
 import { fetchAdminUS } from '../actions/adminAction';
 import { deleteHighUS  } from '../actions/adminAction';
 import { statusHighUS } from '../actions/adminAction';
-import { Collection } from 'mongoose';
 import { emptyRequest } from '../actions/adminAction';
 import { statusVet } from '../actions/adminAction';
 import { statusFire } from '../actions/adminAction';

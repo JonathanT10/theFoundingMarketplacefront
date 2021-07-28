@@ -57,11 +57,11 @@ class MerchProfile extends Component {
             product.map(product => (
             <div key={product._id}>
                 <Container className='products'>
-                    <div clas='row'>
-                    <div class='col'>
+                    <div className='row'>
+                    <div className='col'>
                     <img className="prodPic" src={productImg+product.img}></img>
                     </div>
-                    <div class='col'>
+                    <div className='col'>
                 <Table>  
                 <p className="product">{product.name}</p>
                 <p className="product">{product.description}</p>

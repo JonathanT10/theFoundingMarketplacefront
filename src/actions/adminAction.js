@@ -73,7 +73,7 @@ export const statusFire = (merchantId) => dispatch => {
 }
 
 export const emptyRequest = (admin_id) => dispatch => {
-    axios .put(`http://localhost:5000/api/admin/${admin_id}/empty`)
+    axios.put(`http://localhost:5000/api/admin/${admin_id}/empty`)
     .then(highUS => dispatch({
         type: EMPTY_REQUEST,
         payload: highUS

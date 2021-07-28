@@ -104,7 +104,7 @@ class MerchantMain extends Component {
                         </Col>
                     </Table>
                 </Container>
-                <img class ="centerF" src = {franklin} height="380" width="67%"></img>
+                <img className ="centerF" src = {franklin} height="380" width="67%"></img>
             </div>
             
         )

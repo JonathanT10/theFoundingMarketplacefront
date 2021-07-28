@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import '../css/patronMain.css'
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
-import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Col from "react-bootstrap/Col";
 import jwtDecode from 'jwt-decode';
 import { fetchIdPatron } from '../actions/userActions';
 import { addPastOrders } from '../actions/userActions';
@@ -36,14 +32,14 @@ class Cart extends Component {
 
     mapProductCart(){
         const productImg = "http://localhost:5000/";
-        const total = 0;
         console.log("product items", this.props.patron);
         return this.props.patron.map(cart => (
             cart.map(product => (
             <div key={product.id}>
                 <Container className='products'>
-                    <img className="prodPic" src={productImg+product.img}></img>
-                    <div class='col'>
+                    <img className="prodPic" src={productImg+product.img} 
+                    alt="Product listed for sale"></img>
+                    <div className='col'>
                         <Table>  
                         <p className="product">{product.name}</p>
                         <p className="product">{product.description}</p>
@@ -64,7 +60,8 @@ class Cart extends Component {
     handleGoogle(plat, plng){
         localStorage.setItem('lat', plat)
         localStorage.setItem('lng', plng)
-        {window.location = '/googlemaps'}
+        window.location = '/googlemaps'
+    
     }
 
     checkout = (event) => {

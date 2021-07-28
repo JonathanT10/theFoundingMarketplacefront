@@ -15,7 +15,7 @@ export const fetchIdMerch = (merchant_id) => dispatch => {
 }
 
 export const addCart = (patron_id, product_id) => dispatch => {
-    axios .post(`http://localhost:5000/api/patron/${patron_id}/cart/${product_id}`,{
+    axios.post(`http://localhost:5000/api/patron/${patron_id}/cart/${product_id}`,{
     })
     .then(product => dispatch({
         type: NEW_CART,
@@ -28,7 +28,7 @@ export const addCart = (patron_id, product_id) => dispatch => {
 }
 
 export const emptyCart = (patron_id) => dispatch => {
-    axios .put(`http://localhost:5000/api/patron/${patron_id}/empty`)
+    axios.put(`http://localhost:5000/api/patron/${patron_id}/empty`)
     .then(cart => dispatch({
         type: EMPTY_CART,
         payload: cart
@@ -40,7 +40,7 @@ export const emptyCart = (patron_id) => dispatch => {
 }
 
 export const addPastOrders = (patron_id) => dispatch => {
-    axios .put(`http://localhost:5000/api/patron/${patron_id}/pastorders`,{
+    axios.put(`http://localhost:5000/api/patron/${patron_id}/pastorders`,{
     
     })
     .then(cart => dispatch({

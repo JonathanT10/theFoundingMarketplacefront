@@ -22,7 +22,7 @@ export const highUS = (req) => dispatch => {
 
 
 export const addReq = () => dispatch => {
-    axios .post(`http://localhost:5000/api/admin/60ca4612b0162628c0bf1fff/highus/`,{
+    axios.post(`http://localhost:5000/api/admin/60ca4612b0162628c0bf1fff/highus/`,{
     })
     .then(request => dispatch({
         type: ADD_REQ,

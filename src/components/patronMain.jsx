@@ -59,7 +59,7 @@ class PatronMain extends Component {
         const productImg = "http://localhost:5000/";
         // console.log("product items", this.props.product);
         return this.props.product.map(product => (
-            <div key={product.id}>
+            <div key={product._id}>
                 <Container className='products'>
                     
                     <div className='rowp'>
@@ -169,7 +169,7 @@ class PatronMain extends Component {
                 <Col className='heading'>
                 <h1 >Welcome to main product page</h1>
                 <p className="subp">A place for free trade, with a prioity on products made in USA.</p>
-                <img class ="centerWash" src = {washington} height="150" width="30%"></img>
+                <img className ="centerWash" src = {washington} height="150" width="30%"></img>
                 </Col>
                 {this.mapProduct()}
                 </Container>
