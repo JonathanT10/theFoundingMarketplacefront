@@ -1,4 +1,3 @@
-import { stat } from 'fs';
 import { FETCH_PRODUCT, NEW_PRODUCT, NEW_IMAGE, 
     FETCHID_PRODUCT, MERCHID_PRODUCT, COMM_PROD } from '../actions/types';
 

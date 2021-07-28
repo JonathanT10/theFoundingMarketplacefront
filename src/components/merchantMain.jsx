@@ -113,8 +113,6 @@ class MerchantMain extends Component {
 
 }
 
-const mapStateToProps = state => ({
-    about: state.about.items
-});
+
 
 export default connect(null, { editAbout }) (MerchantMain);

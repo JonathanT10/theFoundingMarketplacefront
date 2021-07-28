@@ -22,11 +22,6 @@ export default function(state = initialState, action){
                 ...state,
                 items: [action.payload, ...state.items]
             }
-            case FETCH_PATRON:
-                return {
-                    ...state,
-                    items: [action.payload, ...state.items]
-                }
                 case NEW_PASTORDERS:
                     return {
                         ...state,

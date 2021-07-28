@@ -60,7 +60,7 @@ class PastOrders extends Component {
     handleGoogle(plat, plng){
         localStorage.setItem('lat', plat)
         localStorage.setItem('lng', plng)
-        {window.location = '/googlemaps'}
+        window.location = '/googlemaps'
     }
 
     logOut = () => {

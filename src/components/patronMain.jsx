@@ -1,19 +1,14 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchProduct } from '../actions/productActions'
 import '../css/patronMain.css'
 import Container from 'react-bootstrap/Container';
-import Table from 'react-bootstrap/Table';
-import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from "react-bootstrap/Col";
 import { addCart } from '../actions/userActions';
 import jwtDecode from 'jwt-decode';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
 import '../css/googleMaps.css';
-import Maps from './googleMaps';
 import { commentProd } from '../actions/productActions';
 import { fetchIdMerchPat } from '../actions/merchIdActions';
 import washington from '../images/washington.jpg'
@@ -132,13 +127,13 @@ class PatronMain extends Component {
 
     handleMerch = event => {
         localStorage.setItem('merchant_id', event.currentTarget.value);
-        {window.location = '/patronmerch'}
+        window.location = '/patronmerch'
     }
 
     handleGoogle(plat, plng){
         localStorage.setItem('lat', plat)
         localStorage.setItem('lng', plng)
-        {window.location = '/googlemaps'}
+        window.location = '/googlemaps'
     }
 
 

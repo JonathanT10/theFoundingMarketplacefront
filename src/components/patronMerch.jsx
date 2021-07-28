@@ -1,19 +1,14 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchIdProduct } from '../actions/productActions'
 import '../css/patronMain.css'
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
-import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from "react-bootstrap/Col";
 import jwtDecode from 'jwt-decode';
 import { fetchIdMerch } from '../actions/userActions';
 import { fetchIdMerchProd } from '../actions/productActions';
 import { addCart } from '../actions/userActions';
-import axios from 'axios';
 import MadeInUS from '../images/MadeInUS.jpg'
 import VOB from '../images/VOB.jpg'
 import Fire from '../images/Fire.jpg'
@@ -101,7 +96,7 @@ class PatMerchProfile extends Component {
     handleGoogle(plat, plng){
         localStorage.setItem('lat', plat)
         localStorage.setItem('lng', plng)
-        {window.location = '/googlemaps'}
+        window.location = '/googlemaps'
     }
 
     highLightUS(){
@@ -182,7 +177,6 @@ const mapStateToProps = state => ({
     merchprod: state.merchprod.items,
     merchPat: state.merchPat.items,
     product: state.product.items,
-    merchprod: state.merchprod.items,
     user: state.user.items
 });
 

@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchIdProduct } from '../actions/productActions'
 import '../css/patronMain.css'
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from "react-bootstrap/Col";
 import jwtDecode from 'jwt-decode';
@@ -50,7 +47,6 @@ class MerchProfile extends Component {
 
     mapProduct(){
         const productImg = "http://localhost:5000/";
-        const user = {};
         console.log("product items", this.props.mproduct);
         
         return this.props.merchprod.map(product => (
@@ -119,7 +115,7 @@ class MerchProfile extends Component {
     handleGoogle(plat, plng){
         localStorage.setItem('lat', plat)
         localStorage.setItem('lng', plng)
-        {window.location = '/googlemaps'}
+        window.location = '/googlemaps'
     }
 
     highLightUS(){

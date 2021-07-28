@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Form';
 import { connect } from 'react-redux';
 
 class ProductImg extends Component {
